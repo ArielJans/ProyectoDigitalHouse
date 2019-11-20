@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+}
+
+.row {
+    margin-right: 0; 
+    margin-left: 0;
+}
+
+.left{
+    background-color: aqua;
+    text-align: center;
+    padding-top: 5%;
+}
+
+img{
+    width: 50%;
+    border-radius: 50%;
+    margin: 10% 25%;
+}
+
+.name{
+    font-size: 2rem;
+}
+
+.rigth{
+    background-color: #673ab766;
+    padding: 6px 30px;
+}
+
+.btn{
+    margin-top: 17px;
+    margin-bottom: 16px;
+}
+
+.list-group{
+    
+    margin-bottom: 20px;
+}
+
+.pagination{
+    margin-bottom: 8px;
+}

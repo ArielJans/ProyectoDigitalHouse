@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Acme|Fredoka+One&display=swap');
+
+*{
+    margin: 0;
+}
+
+body{
+    font-family: 'Acme', sans-serif;
+}
+
+h1{
+    font-family: 'Fredoka One', cursive;
+    color: #FF9800;
+    text-shadow: 4px 4px 4px #795548;
+    font-size: 3rem;
+    background-color: #f0f5f5c2;
+    margin: 0 auto;
+}
+
+.row {
+    margin-right: 0; 
+    margin-left: 0;
+}
+
+.left{
+    background-color: aqua;
+    text-align: center;
+    padding-top: 3%;
+    background-image: url(../img/confetti3.png);
+    background-repeat: no-repeat;
+}
+
+.img-user1{
+    width: 50%;
+    border-radius: 50%;
+    margin: 7% 25%;
+}
+
+.tex-perfil{
+    text-align: left;
+}
+
+.awards{
+    display: flex;
+    justify-content: center;
+    background-color: #03a9f45c;
+    margin-bottom: 3%;
+}
+
+.img-awards{
+    width: 16%;
+    margin: 15px;
+}
+
+.rigth{
+    background-color: #673ab766;
+    padding: 6px 30px;
+}
+
+.list-group{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.list-group-item{
+    margin-top: 9px;
+}
+
+.pagination{
+    margin-bottom: 8px;
+}
+
+.img-user{
+    width: 5%;
+    /*vertical-align: bottom;*/
+    margin-right: 1rem;
+}
+
+.puesto{
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.list-group-item {
+    padding: 0.3rem 1.25rem;
+    display: flex;
+    align-items: center;
+}
+
+.img-user2{
+    width: 6%;
+}
+
+.distinciones{
+    text-align: end;
+}

@@ -1,0 +1,12 @@
+.datosPerfil {
+  list-style: none;
+  padding: 20px;
+  padding-bottom: 40px;
+}
+
+.datosPerfil li {
+  margin-top: 24px;
+  padding: 8px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}

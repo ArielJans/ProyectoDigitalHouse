@@ -10,10 +10,11 @@
 .bordecolor{
   border:2px solid red !important;
 }
-/* .row {
+
+.row {
     margin-right: 0;
     margin-left: 0;
-} */
+} 
 
 .left{
     background-color: aqua;

@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles-index.css">
-    <title>QUESTION RACE</title>
+    <link rel="stylesheet" href="css/styles-login.css">
+    <title>REGISTRO</title>
 </head>
 
 <body>
@@ -38,67 +38,24 @@
                 </ul>
             </div>
         </nav>
-        <img class="img-header" src="./img/fondo.jpg" alt="">
     </header>
     <!--//////////////////// FIN HEADER/NAV ////////////////////////////-->
 
     <main>
-        <!--//////////////////// INICIO DESCRIPCION ////////////////////////////-->
-        <div class="container my-5">
-
-            <div class="row d-flex align-items-center my-5 py-5">
-                <div class="col-md-7">
-                    <h2 class="display-4">Título del beneficio 1. <br><span class="text-muted">Sub titulo.</span></h2>
-                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
-                        euismod
-                        semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus
-                        ac cursus
-                        commodo.</p>
-                </div>
-                <div class="col-md-5">
-                    <img class=" img-fluid mx-auto" src="img/cards1.png" alt="Generic placeholder image">
-                </div>
-            </div>
-
-            <hr class="" id="beneficio2">
-
-            <div class="row d-flex align-items-center my-5 py-5">
-                <div class="pos-tex-izq col-md-7 push-md-5">
-                    <h2 class="display-4">Título del beneficio 2. <br><span class="text-muted">Sub titulo.</span></h2>
-                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
-                        euismod
-                        semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus
-                        ac cursus
-                        commodo.</p>
-                </div>
-                <div class=" pos-img-izq col-md-5 pull-md-7">
-                    <img class=" img-fluid mx-auto" src="img/cards2.png" alt="Generic placeholder image">
-                </div>
-            </div>
-
-            <hr class="" id="beneficio3">
-
-            <div class="row d-flex align-items-center my-5 py-5">
-                <div class="col-md-7">
-                    <h2 class="display-4">Título del beneficio 3. <br><span class="text-muted">Sub titulo.</span></h2>
-                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
-                        euismod
-                        semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus
-                        ac cursus
-                        commodo.</p>
-                </div>
-                <div class="col-md-5">
-                    <img class=" img-fluid mx-auto" src="img/cards3.png" alt="Generic placeholder image">
-                </div>
-            </div>
-        </div>
-        <!--/////////////////////////// FIN DESCRIPCION ///////////////////////////////-->
-
-        <section class="call-to-action">
-            <h2 class="tex-cta">Empeza a jugar ahora!!</h2>
-            <button type="button" class="btn btn-cta btn-primary btn-lg btn-warning"><a href="register.html">REGÍSTRATE</a></button>
+        <!--//////////////////// INICIO REGISTER ////////////////////////////-->
+        <section class="text-center">
+            <form class="form-signin" action="login.php" method="POST">
+                <img class="mb-4 logo" src="img/medal.png" alt="">
+                <h1 class="h3 mb-3 font-weight-normal">Registrarse</h1>
+                <input type="text" id="inputName" class="form-control" placeholder="Nombre" required autofocus>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email" required>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+                <input type="password" id="rePassword" class="form-control" placeholder="Repetir Contraseña" required>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Registrarme</button>
+                <p class="mt-5 mb-3 text-muted">Ya estas registrado? <a href="login.html">Ingresar</a></p>
+            </form>
         </section>
-
+        <!--/////////////////////////// FIN REGISTER ///////////////////////////////-->
     </main>
 
     <!--///////////////////// FOOTER /////////////////////////-->

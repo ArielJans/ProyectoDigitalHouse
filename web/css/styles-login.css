@@ -1,0 +1,46 @@
+body{
+background: rgba(193,70,161,1);
+background: -moz-linear-gradient(-45deg, rgba(193,70,161,1) 0%, rgba(168,0,119,1) 0%, rgba(203,96,179,1) 1%, rgba(0,255,255,0.58) 100%);
+background: -webkit-linear-gradient(-45deg, rgba(193,70,161,1) 0%, rgba(168,0,119,1) 0%, rgba(203,96,179,1) 1%, rgba(0,255,255,0.58) 100%);
+background: -o-linear-gradient(-45deg, rgba(193,70,161,1) 0%, rgba(168,0,119,1) 0%, rgba(203,96,179,1) 1%, rgba(0,255,255,0.58) 100%);
+background: -ms-linear-gradient(-45deg, rgba(193,70,161,1) 0%, rgba(168,0,119,1) 0%, rgba(203,96,179,1) 1%, rgba(0,255,255,0.58) 100%);
+background: linear-gradient(135deg, rgba(193,70,161,1) 0%, rgba(168,0,119,1) 0%, rgba(203,96,179,1) 1%, rgba(0,255,255,0.58) 100%);
+}
+
+footer{
+    background-color: #343a40;
+}
+
+.logo{
+    width: 72px; 
+    height: 72px;
+}
+
+.text-center{
+    width: 30vw;
+    margin: 0 auto;
+}
+
+.text-muted{
+    margin-bottom: 2rem !important;
+    color: #000;
+}
+
+.form-signin{
+    margin-top: 3rem;
+}
+
+input{
+    margin-bottom: 1rem;
+}
+
+
+@media (max-width: 768px) {
+        .text-center {
+          width: 60vw;
+        }
+}
+
+.chek{
+    margin-bottom: 2rem;
+}

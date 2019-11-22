@@ -14,7 +14,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">NOMBRE DEL JUEGO</a>
+            <a class="navbar-brand" href="index.html">QUESTION RACE</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -22,41 +22,151 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">INICIAR <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="login.html">JUGAR<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">REGISTRARSE</a>
+                        <a class="nav-link" href="ranking-de-usuarios.html">RANKING</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">ZARAZA</a>
+                        <a class="nav-link" href="contacto.html">CONTACTO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="preguntas-frecuentes.html">AYUDA</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
+
     <main class="row">
         <section class="left col-md-4">
             <h1 class="name">Administrador 1</h1>
             <img src="img/perfil.jpg" alt="Imagen de perfil">
             <p>País: <strong>Argentina</strong></p>
             <p>Nivel de contribución: <strong>Alto</strong></p>
-            <button type="button" class="btn btn-perfil btn-primary">Editar perfil</button>
+            <button type="button" class="btn btn-primary">Editar perfil</button>
         </section>
 
         <section class="rigth col-md-8">
-    
+
             <!-- ///////////////// Button trigger modal ///////////////-->
             <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal"
                 data-target="#ModalAgregarPregunta">
                 Agregar Pregunta
             </button>
 
-            
-           
+            <!-- ///////////////// LISTA DE PREGUNTAS ///////////////-->
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action" data-toggle="modal"
+                    data-target="#ModalEditarPregunta">¿Este es un ejemplo de una pregunta ya redactada?</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-primary" data-toggle="modal"
+                    data-target="#ModalEditarPregunta">¿Este es un ejemplo de una pregunta ya redactada?</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">¿Este es un ejemplo
+                    de
+                    otra pregunta ya redactada?</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-success">¿Este es un ejemplo
+                    de
+                    otra pregunta ya redactada?</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-danger">¿A simple danger list
+                    groupitem list group item?</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">¿A simple warning
+                    list
+                    group item?</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-info">¿A simple info list
+                    group
+                    item?</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-light">¿Agroupitem list group
+                    item
+                    simple light list group item?</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">¿A simple dark list
+                    group
+                    item?</a>
+            </div>
+
+            <!-- ///////////////// PAGINACION ///////////////-->
+            <nav aria-label="...">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item" aria-current="page">
+                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Próximo</a>
+                    </li>
+                </ul>
+            </nav>
+
         </section>
     </main>
 
-   
+    <!-- ///////////////// MODAL ///////////////-->
+    <div class="modal fade" id="ModalAgregarPregunta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Crea una nueva pregunta</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="message-text" class="col-form-label">Redactar pregunta:</label>
+                    <textarea class="form-control" id="message-text"></textarea>
+                    <label for="message-text" class="col-form-label">Respuesta opción 1:</label>
+                    <textarea class="form-control" id="message-text"></textarea>
+                    <label for="message-text" class="col-form-label">Respuesta opción 2:</label>
+                    <textarea class="form-control" id="message-text"></textarea>
+                    <label for="message-text" class="col-form-label">Respuesta opción 3:</label>
+                    <textarea class="form-control" id="message-text"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ///////////////// MODAL EDICION PREGUNTAS///////////////-->
+    <div class="modal fade" id="ModalEditarPregunta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar/Eliminar pregunta:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="message-text" class="col-form-label">Editar pregunta:</label>
+                    <textarea class="form-control"
+                        id="message-text">¿Este es un ejemplo de una pregunta ya redactada?</textarea>
+                    <label for="message-text" class="col-form-label">Respuesta opción 1:</label>
+                    <textarea class="form-control"
+                        id="message-text">Este es un ejemplo de la primera respuesta ya redactada</textarea>
+                    <label for="message-text" class="col-form-label">Respuesta opción 2:</label>
+                    <textarea class="form-control"
+                        id="message-text">Este es un ejemplo de la segunda respuesta ya redactada</textarea>
+                    <label for="message-text" class="col-form-label">Respuesta opción 3:</label>
+                    <textarea class="form-control"
+                        id="message-text">Este es un ejemplo de la tercera respuesta ya redactada</textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger">Eliminar pregunta</button>
+                    <button type="button" class="btn btn-primary">Guardar edición</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ///////////////// FIN MODAL EDICION PREGUNTAS///////////////-->
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

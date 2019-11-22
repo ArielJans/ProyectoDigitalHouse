@@ -1,4 +1,5 @@
 
+@import url('https://fonts.googleapis.com/css?family=Bungee&display=swap');
 
 .img-header{
     width: 100%;
@@ -7,4 +8,24 @@
 
 footer{
     background-color: #343a40;
+}
+
+.pos-tex-izq{
+    left: 41.666667%;
+}
+
+.pos-img-izq{
+    right: 58.333333%;
+}
+
+.call-to-action{
+    background-color: royalblue;
+    height: 30vh;
+    text-align: center;
+}
+
+.tex-cta{
+    padding: 2rem 0;
+    font-family: 'Bungee', cursive;
+    color: sandybrown;
 }

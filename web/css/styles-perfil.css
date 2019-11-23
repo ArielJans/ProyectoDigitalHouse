@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy&display');
+
 .datosPerfil {
   list-style: none;
   padding: 20px;
@@ -10,3 +12,9 @@
   border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
+
+.navbar-brand{
+    font-family: 'Luckiest Guy';
+    font-size: 2rem;
+    color: #ff9800 !important;
+} 

@@ -1,13 +1,17 @@
 
-@import url('https://fonts.googleapis.com/css?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy&display');
 
 .img-header{
     width: 100%;
     /*filter: opacity(.5);*/
 }
 
+.bg-dark {
+    background-color: #4c3673d4!important;
+}
+
 footer{
-    background-color: #343a40;
+    background-color: #4c3673d4!important;
 }
 
 .pos-tex-izq{
@@ -26,6 +30,20 @@ footer{
 
 .tex-cta{
     padding: 3rem 0rem 2rem;
-    font-family: 'Bungee', cursive;
     color: sandybrown;
+}
+
+.navbar-brand{
+    font-family: 'Luckiest Guy';
+    font-size: 2rem;
+    color: #ff9800 !important;
+} 
+
+.float-left{
+    width: 9%;
+}
+
+.namber{
+    font-family: 'Luckiest Guy';
+    color: #ff9800 !important;
 }

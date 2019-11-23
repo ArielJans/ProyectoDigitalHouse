@@ -1,13 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Luckiest+Guy&display');
 
 body {
-  background-image:
-  linear-gradient(
-    rgba(0, 0, 0, -0.5),
-    rgba(0, 0, 0, 0.5)
-  ),
-   url(../img/contacto.png);
-   background-size: cover;
+  /* background: url("../img/contacto.png"); */
+  background-size: cover;
+  background-color: #46b39c;
+  /* border: 1px solid red; */
+}
+
+#espacio{
+  margin-top: 30px;
+}
+
+/* .subnombres{
+  font-weight: bold;
+} */
+
+h1{
+  text-align: center;
+  /* font-weight: bold; */
+}
+
+button{
+  margin-top: 30px;
+  border:1px solid red;
 }
 
 .navbar-brand{

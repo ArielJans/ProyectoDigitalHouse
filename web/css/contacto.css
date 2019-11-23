@@ -4,3 +4,21 @@ body {
   background-color: #46b39c;
   /* border: 1px solid red; */
 }
+
+#espacio{
+  margin-top: 30px;
+}
+
+/* .subnombres{
+  font-weight: bold;
+} */
+
+h1{
+  text-align: center;
+  /* font-weight: bold; */
+}
+
+button{
+  margin-top: 30px;
+  border:1px solid red;
+}

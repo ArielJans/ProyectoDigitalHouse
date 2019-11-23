@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Acme|Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy&display');
 
 *{
     margin: 0;
@@ -99,3 +99,9 @@ h1{
 .distinciones{
     text-align: end;
 }
+
+.navbar-brand{
+    font-family: 'Luckiest Guy';
+    font-size: 2rem;
+    color: #ff9800 !important;
+} 

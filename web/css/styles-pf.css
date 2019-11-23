@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy&display');
+
+.bg-dark {
+    background-color: #4c3673d4!important;
+}
+
 footer{
-    background-color: #343a40;
+    background-color: #4c3673d4!important;
 }
 
 body{
@@ -41,4 +47,19 @@ h4{
 
 a{
     color: #0923dc;
+}
+
+.navbar-brand{
+    font-family: 'Luckiest Guy';
+    font-size: 2rem;
+    color: #ff9800 !important;
+} 
+
+.float-left{
+    width: 9%;
+}
+
+.namber{
+    font-family: 'Luckiest Guy';
+    color: #ff9800 !important;
 }

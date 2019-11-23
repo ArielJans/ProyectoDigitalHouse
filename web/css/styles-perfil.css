@@ -1,12 +1,16 @@
 .datosPerfil {
   list-style: none;
-  padding: 20px;
-  padding-bottom: 40px;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 7rem;
+  /* padding: 20px;
+  padding-bottom: 40px; */
 }
 
-.datosPerfil li {
+/*.datosPerfil li {
   margin-top: 24px;
   padding: 8px;
   border-top: 1px solid black;
-  border-bottom: 1px solid black;
-}
+  border-bottom: 1px solid black; 
+}*/
+

@@ -25,19 +25,11 @@ button{
   margin-top: 30px;
   /* border:1px solid red; */
 }
-
-<<<<<<< HEAD
 footer{
   background-color: #343a40;
   margin-top: 50px;
-  /* border: 1px solid rgb(0, 255, 170); */
+  border: 1px solid rgb(0, 255, 170);
 }
-
-/* #a{
-  margin: 0 auto;
-  width: 30vw;
-} */
-=======
 .navbar-brand{
     font-family: 'Luckiest Guy';
     font-size: 2rem;
@@ -47,4 +39,3 @@ footer{
     background-color: #4c3673d4!important;
 }
 
->>>>>>> 770e08b6b1bb59f60bc2d5810d19e066e9e32ccb

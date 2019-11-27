@@ -2,14 +2,22 @@
 
 .datosPerfil {
   list-style: none;
-  padding: 20px;
-  padding-bottom: 40px;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 7rem;
+  /* padding: 20px;
+  padding-bottom: 40px; */
 }
 
-.datosPerfil li {
+/*.datosPerfil li {
   margin-top: 24px;
   padding: 8px;
   border-top: 1px solid black;
+<<<<<<< HEAD
+  border-bottom: 1px solid black; 
+}*/
+
+=======
   border-bottom: 1px solid black;
 }
 
@@ -18,6 +26,7 @@
     font-size: 2rem;
     color: #ff9800 !important;
 } 
+<<<<<<< HEAD
 
 *{
     margin: 0;
@@ -103,3 +112,6 @@ img{
     font-size: 2rem;
     color: #ff9800 !important;
 } 
+=======
+>>>>>>> 770e08b6b1bb59f60bc2d5810d19e066e9e32ccb
+>>>>>>> 499af7c89d5409d305c3e167ed9557fdd197bc5b

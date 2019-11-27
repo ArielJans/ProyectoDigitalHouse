@@ -41,7 +41,7 @@ input{
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 950px) {
         .text-center {
           width: 60vw;
         }
@@ -64,4 +64,18 @@ input{
 .namber{
     font-family: 'Luckiest Guy';
     color: #ff9800 !important;
+}
+
+.footer-brand{
+    padding-bottom: 1rem;
+}
+
+.badge{
+    margin-top: 5px;
+    padding: 0.6rem 2rem;
+    font-size: 1.1rem;
+}
+
+.recupero-pass {
+    margin-left: 1rem;
 }

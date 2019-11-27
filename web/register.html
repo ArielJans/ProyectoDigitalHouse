@@ -54,8 +54,13 @@
                 <input type="email" id="inputEmail" class="form-control" placeholder="Email" required>
                 <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
                 <input type="password" id="rePassword" class="form-control" placeholder="Repetir Contraseña" required>
+                <input type="checkbox" class="chek" value="remember-me"> Recordarme
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Registrarme</button>
                 <p class="mt-5 mb-3 text-muted">Ya estas registrado? <a href="login.html">Ingresar</a></p>
+
+                <!--/////// LLAMADO VALIDACION PHP ///////-->
+                <small> <?= (isset($errores['nombre']))?> </small>
+
             </form>
         </section>
         <!--/////////////////////////// FIN REGISTER ///////////////////////////////-->
@@ -64,19 +69,19 @@
     <!--///////////////////// FOOTER /////////////////////////-->
     <footer class="container-fluid bg-inverse">
         <div class="row text-white py-4 text-white">
-            <div class="col-md-3">
+            <div class="col-md-3 footer-brand">
                 <img src="img/medal.png" class="float-left mr-3 imgfoter" alt="#">
                 <h4 class="namber">QUESTION RACE</h4>
                 <div class="blockquote-footer">Todos los derechos reservados <cite title="Source Title">2019</cite>
                 </div>
             </div>
             <div class="col-md-3">
-                <h4 class="lead">Lorem ipsum</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, fugit?</p>
+                <h4 class="lead">Contacto</h4>
+                <p>Cualquier consulta que tengas no dudes en contáctanos haciendo click <a href="contacto.html">aquí</a></p>
             </div>
             <div class="col-md-3">
-                <h4 class="lead">Lorem ipsum</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quidem!</p>
+                <h4 class="lead">Términos y condiciones</h4>
+                <p>Lee nuestros <a href="#">términos</a> y <a href="#">condiciones</a> aquí para saber más sobre nosotros</p>
             </div>
             <div class="col-md-3">
                 <h4 class="lead">Síguenos</h4>

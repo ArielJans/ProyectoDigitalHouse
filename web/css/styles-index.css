@@ -24,8 +24,8 @@ footer{
 
 .call-to-action{
     background-color: royalblue;
-    height: 30vh;
     text-align: center;
+    padding-bottom: 2rem;
 }
 
 .tex-cta{
@@ -46,4 +46,13 @@ footer{
 .namber{
     font-family: 'Luckiest Guy';
     color: #ff9800 !important;
+}
+.footer-brand{
+    padding-bottom: 1rem;
+}
+
+.badge{
+    margin-top: 5px;
+    padding: 0.6rem 2rem;
+    font-size: 1.1rem;
 }

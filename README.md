@@ -1,5 +1,7 @@
 # ProyectoDigitalHouse
 
+url para ver el proyecto:  https://arieljans.github.io/ProyectoDigitalHouse/
+
 Para todos ! Tenés que crear un sitio web, el cual sea responsive y navegable a través de enlaces del mismo sitio con las siguientes páginas:
 
 1. Home - Con información general del proyecto

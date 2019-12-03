@@ -37,12 +37,6 @@ h1{
 h4{
     color: white;
     text-shadow: 6px 6px 4px rgba(0, 0, 0, 0.29);
-    margin-left: 2rem;
-    margin-bottom: 3rem;
-}
-
-.lead {
-    margin-bottom: 2rem;
 }
 
 a{
@@ -62,4 +56,19 @@ a{
 .namber{
     font-family: 'Luckiest Guy';
     color: #ff9800 !important;
+}
+
+.footer-brand{
+    padding-bottom: 1rem;
+}
+
+.badge{
+    margin-top: 5px;
+    padding: 0.6rem 2rem;
+    font-size: 1.1rem;
+}
+
+.email{
+    margin-left: 2rem;
+    margin-bottom: 3rem;
 }

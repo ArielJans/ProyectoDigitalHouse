@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy&display');
+
+*{
+    margin: 0;
+}
+
+.bg-dark {
+    background-color: #4c3673d4!important;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+    height: 89vh;
+} 
+
+/* custom left */
+.left{
+    background-color: aqua;
+    background-image:
+    linear-gradient(
+      rgba(0, 0, 0, -0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+     url(../img/pregunta.png);
+
+    text-align: center;
+    padding-top: 2%;
+}
+
+p{
+    color: white;
+}
+
+h2{
+    margin-bottom: 25px;
+}
+
+.cuestion{
+    font-size: 1.5rem;
+    background-color: #9C27B0;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.btn{
+    margin-top: 17px;
+    margin-bottom: 16px;
+    box-shadow: 8px 9px 12px 0px rgba(0, 0, 0, 0.29);
+}
+
+.navbar-brand{
+    font-family: 'Luckiest Guy';
+    font-size: 2rem;
+    color: #ff9800 !important;
+} 
+
+form{
+    background-color: #ff9800eb;
+    font-size: 2rem;
+    padding: 25px 15px 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* custom rigth */
+
+.rigth{
+    background-color: #673ab766;
+    padding-top: 15px;
+}
+
+.img-back{
+    width: 97%;
+    margin-top: 4%;
+    position: absolute;
+    margin-left: -2px;
+    margin-bottom: 5px;
+}
+
+.img-ficha{
+    position: absolute;
+    width: 11%;
+    margin-top: 40%;
+    margin-left: 20%;
+}
+
+
+/* custom radio */
+.radio {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* hide the browser's default radio button */
+.radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* create custom radio */
+.radio .check {
+    position: absolute;
+    top: 2px;
+    left: 20px;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+
+/* on mouse-over, add border color */
+.radio:hover input ~ .check {
+    border: 2px solid #2489C5;
+}
+
+/* add background color when the radio is checked */
+.radio input:checked ~ .check {
+    background-color: #2489C5;
+    border:none;
+}
+
+/* create the radio and hide when not checked */
+.radio .check:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* show the radio when checked */
+.radio input:checked ~ .check:after {
+    display: block;
+}
+
+/* radio style */
+.radio .check:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}

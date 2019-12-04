@@ -120,6 +120,7 @@ if($_POST)
 </header>
 <!--//////////////////// FIN HEADER/NAV ////////////////////////////-->
 
+<<<<<<< HEAD
 <main>
     <!--//////////////////// INICIO REGISTER ////////////////////////////-->
     <section class="text-center">
@@ -137,6 +138,24 @@ if($_POST)
             <input type="checkbox" class="chek" value="remember-me"> Recordarme
             <button class="btn btn-lg btn-primary btn-block" type="submit">Registrarme</button>
             <p class="mt-5 mb-3 text-muted">Ya estas registrado? <a href="login.html">Ingresar</a></p>
+=======
+    <main>
+        <!--//////////////////// INICIO REGISTER ////////////////////////////-->
+        <section class="text-center">
+            <form class="form-signin" action="login.php" method="POST">
+                <img class="mb-4 logo" src="img/medal.png" alt="">
+                <h1 class="h3 mb-3 font-weight-normal">Registrarse</h1>
+                <input type="text" id="inputName" class="form-control" placeholder="Nombre" required autofocus>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email" required>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+                <input type="password" id="rePassword" class="form-control" placeholder="Repetir Contraseña" required>
+                <div class="custom-control custom-checkbox mb-3">
+                    <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+                    <label class="custom-control-label" for="customControlValidation1">Recordarme</label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Registrarme</button>
+                <p class="mt-5 mb-3 text-muted">Ya estas registrado? <a href="login.html">Ingresar</a></p>
+>>>>>>> 489b0f9fe457103c0074a2a9d85027e295bf78b5
 
             <!--/////// LLAMADO VALIDACION PHP //////
             <small><?= isset($errores($_POST["text"])) ? $errores["texto"] : "" ?></small>-->

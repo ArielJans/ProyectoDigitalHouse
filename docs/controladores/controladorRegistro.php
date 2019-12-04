@@ -34,7 +34,7 @@ $email = "";
 
     if (isset($_POST['pass'])){
         if (empty($_POST['pass'])) {
-            $errores['pass'] = "La xontraseña debe tener mas de seis caracteres";
+            $errores['pass'] = "La contraseña debe tener mas de seis caracteres";
         }
     }
 

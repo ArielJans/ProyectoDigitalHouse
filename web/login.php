@@ -1,31 +1,10 @@
-<!DOCTYPE html>
 <?php
-
-//require_once "test.php";
-
-$errores = [];
-$nombre = "";
 $email = "";
 $password = "";
-$repassword = "";
+$errores = [];
 
 if($_POST)
 {
-    if(isset($_POST["nombre"]))
-    {
-        if(empty($_POST["nombre"]))
-        {
-            $errores["nombre"] = "Ténes que ingresar un nombre! lo dejaste en blanco";
-        }
-        if(strlen($_POST["nombre"]) <= 2)
-        {
-            $errores["nombre"] = "El nombre debe tener más de dos caracteres!";
-        }
-        else
-        {
-            $nombre = $_POST["nombre"];
-        }
-    }
     if(isset($_POST["email"]))
     {
         if(empty($_POST["email"]))
@@ -50,7 +29,9 @@ if($_POST)
         }
         if(strlen($_POST["password"]) < 6)
         {
-            $errores["password"] = "Su contraseña debe tener por lo menos seis caracteres, agregale más";
+            $errores["password"] = "Contraseña incorrecta! intente de nuevo";
+            $repassword["password"] = "";
+
         }
         else
         {
@@ -58,23 +39,37 @@ if($_POST)
         }
     }
 
-    if(isset($_POST["repassword"]))
+
+    if (count($errores) === 0)
     {
-        if(empty($_POST["repassword"]))
+
+
+        $dato = file_get_contents("usuarios.json");
+        $datos = json_decode($dato, true);
+        $usuariosseparados = explode(PHP_EOL, $datos);
+
+        foreach($usuariosseparados as $valor)
         {
-            $errores["repassword"] = "Este campo tiene que estar lleno, cargalo!";
+            if($valor["email"] == $_POST["email"])
+            {
+                if(password_verify($_POST["password"], $valor["pass"]))
+                {
+                    session_start();
+                    $_SESSION["nombre"] = $valor["nombre"];
+                    $_SESSION["email"] = $valor["email"];
+                    header("Location: perfil.php");
+                    exit;
+
+                }
+            }
         }
-        if($_POST["password"] != $_POST["repassword"])
-        {
-            $errores["repassword"] = "Contraseñas no coinciden, favor de verificar";
-        }
-        else
-        {
-            $repassword = $_POST["repassword"];
-        }
+
     }
+
 }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -85,10 +80,11 @@ if($_POST)
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles-login.css">
-    <title>REGISTRO</title>
+    <title>LOGIN</title>
 </head>
 
 <body>
+
     <!--//////////////////// INICIO HEADER/NAV ////////////////////////////-->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -121,29 +117,24 @@ if($_POST)
 <!--//////////////////// FIN HEADER/NAV ////////////////////////////-->
 
 <main>
-    <!--//////////////////// INICIO REGISTER ////////////////////////////-->
+    <!--//////////////////// INICIO FORM ////////////////////////////-->
     <section class="text-center">
-        <form class="form-signin" action="home.php" method="POST" enctype="multipart/form-data">
+        <form class="form-signin" action="" method="POST">
             <img class="mb-4 logo" src="img/medal.png" alt="">
-            <h1 class="h3 mb-3 font-weight-normal">Registrarse</h1>
-            <input type="text" id="inputName" name="nombre" class="form-control" placeholder="Nombre" required autofocus>
-            <small><?= (isset($errores["nombre"])) ? $errores["nombre"] : "" ?></small>
-            <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email" required>
-            <small><?= (isset($errores["email"])) ? $errores["email"] : "" ?></small>
-            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Contraseña" required>
-            <small><?= (isset($errores["password"])) ? $errores["password"] : "" ?></small>
-            <input type="password" id="rePassword" name="repassword" class="form-control" placeholder="Repetir Contraseña" required>
-           <small><?= (isset($errores["repassword"])) ? $errores["repassword"] : "" ?></small>
+            <h1 class="h3 mb-3 font-weight-normal">Iniciar Sesion</h1>
+            <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email" required
+            autofocus value="<?php if(empty($_POST["email"])){echo"";}else{echo $_POST["email"];}?>">
+            <small class=""><?= (isset($errores["email"])) ? $errores["email"] : "" ?></small>
+            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Contraseña" required value="<?php 
+            if(isset($errores["password"])){echo"";}else{echo $password;}?>">
+            <small class=""><?= (isset($errores["password"])) ? $errores["password"] : "" ?></small>
             <input type="checkbox" class="chek" value="remember-me"> Recordarme
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Registrarme</button>
-            <p class="mt-5 mb-3 text-muted">Ya estas registrado? <a href="login.html">Ingresar</a></p>
-
-            <!--/////// LLAMADO VALIDACION PHP //////
-            <small><?= isset($errores($_POST["text"])) ? $errores["texto"] : "" ?></small>-->
-
+            <a href="#" class="recupero-pass">Olvide mi contraseña</a>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+            <p class="mt-5 mb-3 text-muted">No estas registrado? <a href="register.html">Registrarme</a></p>
         </form>
     </section>
-    <!--/////////////////////////// FIN REGISTER ///////////////////////////////-->
+    <!--/////////////////////////// FIN FORM ///////////////////////////////-->
 </main>
 
 <!--///////////////////// FOOTER /////////////////////////-->

@@ -50,19 +50,39 @@ if($_POST)
             $usuariosfinales[] = $usuariofinal;
         }
         //var_dump($usuariosfinales);
+
+        echo "<br>   ". count($usuariosfinales) . "      <br>";
+
+        $salida = 0;
         foreach($usuariosfinales as $usuario)
         {
+            $salida++;
             var_dump($usuario["email"]);
             if($usuario["email"] == $_POST["email"])
             {
                 echo "SE ENCONTRO EL CORREO ........ se buscaba   " .$usuario["email"] ."   se econtro   " . $_POST["email"] . "    <br>";
-              /*  if(password_verify($_POST["password"], $usuario["pass"]))
+              if(password_verify($_POST["password"], $usuario["pass"]))
                 {
+                    echo "<br><br>DATOS CORRECTOS, SE INICIA SESIÓN<br><br>";
                     session_start();
                     $_SESSION["nombre"] = $usuario["nombre"];
                     $_SESSION["email"] = $usuario["email"];
-                    header("Location: perfil.php");
-                    exit;}*/
+                    $salida = 0;
+                   // header("Location: perfil.php")sss;
+                    //exit;
+                }
+                if(isset($_POST["recordarme"]))
+                {
+                    echo "<br><br>USUARIO QUIERE RECORDAR LOS DATOS<br><br>";
+                }
+                else
+                {
+                    echo "<br><br>USUARIO NO QUIERE RECORDAR LOS DATOS<br><br>";
+                }
+            }
+            if(count($usuariosfinales) == $salida)
+            {
+                echo "<br>DATOS INCORRECTOS<br>";
             }
         }
 
@@ -130,7 +150,7 @@ if($_POST)
             <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Contraseña" required value="<?php 
             if(isset($errores["password"])){echo"";}else{echo $password;}?>">
             <small class=""><?= (isset($errores["password"])) ? $errores["password"] : "" ?></small>
-            <input type="checkbox" class="chek" value="remember-me"> Recordarme
+            <input type="checkbox" class="chek" value="remember-me" name="recordarme" checked> Recordarme
             <a href="#" class="recupero-pass">Olvide mi contraseña</a>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
             <p class="mt-5 mb-3 text-muted">No estas registrado? <a href="register.html">Registrarme</a></p>

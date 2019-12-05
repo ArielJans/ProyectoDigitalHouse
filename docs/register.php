@@ -102,7 +102,7 @@ if($_POST)
 		$_SESSION["nombre"] = $elUsuario["nombre"];
 		$_SESSION["email"] = $elUsuario["email"];
 
-		header("Location: perfil.php");
+		header("Location: login.php");
 		exit;
 
 	}

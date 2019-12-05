@@ -1,3 +1,4 @@
+
 <?php
 $email = "";
 $password = "";
@@ -13,7 +14,7 @@ if($_POST)
         }
         if(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))
         {
-            $errores["email"] = "Lo que pones acá debe ser un email valido, no olvides poner un arroba y poner un dominio valido";
+            $errores["email"] = "Lo que pones acá debe ser un email con formato valido, no olvides poner un arroba y poner un dominio";
         }
         else
         {
@@ -27,12 +28,6 @@ if($_POST)
         {
             $errores["password"] = "Tenes que poner una contraseña! lo dejaste en blanco";
         }
-        if(strlen($_POST["password"]) < 6)
-        {
-            $errores["password"] = "Contraseña incorrecta! intente de nuevo";
-            $repassword["password"] = "";
-
-        }
         else
         {
             $password = $_POST["password"];
@@ -44,23 +39,30 @@ if($_POST)
     {
 
 
-        $dato = file_get_contents("usuarios.json");
-        $datos = json_decode($dato, true);
-        $usuariosseparados = explode(PHP_EOL, $datos);
-
-        foreach($usuariosseparados as $valor)
+        $datos = file_get_contents("usuarios.json");
+        $datos = explode(PHP_EOL, $datos);
+        array_pop($datos);
+        $usuariosfinales = [];
+       // var_dump($datos);
+        foreach($datos as $usuario1) //entra en cada pusición, por cada usuario que tenga lo convierte en json y lo guarda en usrfinal, y lo guarda en el última posicion de usuariosfinales
         {
-            if($valor["email"] == $_POST["email"])
+            $usuariofinal = json_decode($usuario1, true);
+            $usuariosfinales[] = $usuariofinal;
+        }
+        //var_dump($usuariosfinales);
+        foreach($usuariosfinales as $usuario)
+        {
+            var_dump($usuario["email"]);
+            if($usuario["email"] == $_POST["email"])
             {
-                if(password_verify($_POST["password"], $valor["pass"]))
+                echo "SE ENCONTRO EL CORREO ........ se buscaba   " .$usuario["email"] ."   se econtro   " . $_POST["email"] . "    <br>";
+              /*  if(password_verify($_POST["password"], $usuario["pass"]))
                 {
                     session_start();
-                    $_SESSION["nombre"] = $valor["nombre"];
-                    $_SESSION["email"] = $valor["email"];
+                    $_SESSION["nombre"] = $usuario["nombre"];
+                    $_SESSION["email"] = $usuario["email"];
                     header("Location: perfil.php");
-                    exit;
-
-                }
+                    exit;}*/
             }
         }
 
@@ -119,7 +121,7 @@ if($_POST)
 <main>
     <!--//////////////////// INICIO FORM ////////////////////////////-->
     <section class="text-center">
-        <form class="form-signin" action="" method="POST">
+        <form class="form-signin" action="login.php" method="POST" enctype="multipart/form-data">
             <img class="mb-4 logo" src="img/medal.png" alt="">
             <h1 class="h3 mb-3 font-weight-normal">Iniciar Sesion</h1>
             <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email" required

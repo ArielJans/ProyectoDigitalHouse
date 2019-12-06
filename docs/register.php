@@ -17,7 +17,7 @@ if($_POST)
 		{
 			$errores["nombre"] = "Ténes que ingresar un nombre! lo dejaste en blanco";
 		}
-		if(strlen($_POST["nombre"]) < 3)
+		if(strlen($_POST["nombre"]) < 3 && !empty($_POST["nombre"]))
 		{
 			$errores["nombre"] = "El nombre debe tener más de dos caracteres!";
 		}
@@ -32,7 +32,7 @@ if($_POST)
 		{
 			$errores["email"] = "Ténes que ingresar un email! lo dejaste en blanco";
 		}
-		if(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))
+		if(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) && !empty($_POST["email"]))
 		{
 			$errores["email"] = "Lo que pones acá debe ser un email valido, no olvides poner un arroba y poner un dominio valido";
 		}
@@ -48,10 +48,10 @@ if($_POST)
 		{
 			$errores["password"] = "Tenes que poner una contraseña! lo dejaste en blanco";
 		}
-		if(strlen($_POST["password"]) < 6)
+		if(strlen($_POST["password"]) < 6 && !empty($_POST["password"]))
 		{
 			$errores["password"] = "Su contraseña debe tener por lo menos seis caracteres, agregale más";
-			$repassword["password"] = "";
+			$repassword = "";
 
 		}
 		else
@@ -64,11 +64,11 @@ if($_POST)
 	{
 		if(empty($_POST["repassword"]))
 		{
-			$errores["repassword"] = "Este campo tiene que estar lleno, cargalo!";
+			$errores["repassword"] = "Este campo tiene que estar lleno, cargalo!<br><br>";
 		}
-		if(strcmp($_POST["repassword"], $_POST["password"]))
+		if(strcmp($_POST["repassword"], $_POST["password"]) && !empty($_POST["repassword"]))
 		{
-			$errores["repassword"] = "Contraseñas no coinciden, favor de verificar";
+			$errores["repassword"] = "Contraseñas no coinciden, favor de verificar<br><br>";
 			$repassword = "";
 
 		}
@@ -91,7 +91,7 @@ if($_POST)
 		{
 			$elUsuario = [
 				"nombre" => trim($nombre),
-				"email" => $email,
+				"email" => trim($email),
 				"pass" => password_hash($password, PASSWORD_DEFAULT)
 			];
 		}
@@ -102,8 +102,8 @@ if($_POST)
 		$_SESSION["nombre"] = $elUsuario["nombre"];
 		$_SESSION["email"] = $elUsuario["email"];
 
-		header("Location: login.php");
-		exit;
+		//header("Location: login.php");
+		//exit;
 
 	}
 	else
@@ -167,17 +167,17 @@ if($_POST)
 		<form class="form-signin" action="" method="POST" enctype="multipart/form-data">
 			<img class="mb-4 logo" src="img/medal.png" alt="">
 			<h1 class="h3 mb-3 font-weight-normal"><?php var_dump($_POST);?> </h1>
-			<input type="text" id="inputName" name="nombre" class="form-control " placeholder="Nombre" required value="<?php if(empty($_POST["nombre"])){echo"";}else{echo $_POST["nombre"];}?>">
-			<small class=""><?= (isset($errores["nombre"])) ? $errores["nombre"] : "" ?></small>
-			<input type="email" id="inputEmail" name="email" class="form-control " placeholder="Email" required value="<?php if(empty($_POST["email"])){echo"";}else{echo $_POST["email"];}?>">
+			<input type="text" id="inputName" name="nombre" class="form-control " placeholder="Nombre" value="<?php if(empty($_POST["nombre"])){echo"";}else{echo $_POST["nombre"];}?>">
+			<small class=""><?=(isset($errores["nombre"])) ? $errores["nombre"] : "" ?></small>
+			<input type="email" id="inputEmail" name="email" class="form-control " placeholder="Email" value="<?php if(empty($_POST["email"])){echo"";}else{echo $_POST["email"];}?>">
 			<small class=""><?= (isset($errores["email"])) ? $errores["email"] : "" ?></small>
-			<input type="text" id="inputPassword" name="password" class="form-control " placeholder="Contraseña" required value="<?php 
+			<input type="text" id="inputPassword" name="password" class="form-control " placeholder="Contraseña" value="<?php 
 			if(isset($errores["password"])){echo"";}else{echo $password;}?>">
 			<small class=""><?= (isset($errores["password"])) ? $errores["password"] : "" ?></small>
-			<input type="text" id="rePassword" name="repassword" class="form-control " placeholder="Repetir Contraseña" required value="<?php 
+			<input type="text" id="rePassword" name="repassword" class="form-control " placeholder="Repetir Contraseña" value="<?php 
 			if(isset($errores["repassword"])){echo"";}else{echo $repassword;}?>">
 			<small class=""><?= (isset($errores["repassword"])) ? $errores["repassword"] : "" ?></small>
-			<input type="checkbox" class="chek" value="remember-me"> Recordarme
+			<input type="checkbox" class="chek" value="remember-me" name="recordarme" <?php if(isset($_POST["recordarme"])){echo "checked";}else{echo "";}?>> Recordarme
 			<button class="btn btn-lg btn-primary btn-block" type="submit">Registrarme</button>
 			<p class="mt-5 mb-3 text-muted">Ya estas registrado? <a href="login.html">Ingresar</a></p>
 		</form>

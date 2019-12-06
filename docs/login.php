@@ -1,8 +1,45 @@
 
 <?php
+
+/*
+Requerimientos obligatorios
+La página de registro y la página de login deben cumplir con las siguientes solicitudes
+Para todos los modelos de negocio
+●   Debe existir una validación de los formularios (login y register) del lado del servidor.
+●   En caso de que haya datos incorrectos o no válidos la página debería mostrar cuáles
+son los errores.
+●   En caso de que haya datos incorrectos o no válidos los datos que estaban correctos
+deben seguirse viendo en pantalla (persistencia).
+●   En la registración, el usuario final debería poder subir una foto de perfil.
+●   En ambos formularios debería estar disponible la opción de "Recordar usuario”.
+●   Debemos tener un archivo JSON en donde se guarde el/los usuario/s.
+
+3
+
+Requerimientos opcionales (ojo, mejoran MUCHO la experiencia
+de usuario)
+Para todos los modelos de negocio
+● El sitio debería distinguir usuarios logueados de no logueados. Para ésto deberían
+implementar una de las dos funcionalidades descritas a continuación:
+a. Opción 1: Al loguearse, el usuario debe ser enviado a una página de BIENVENIDA.
+Si quiere acceder a este sitio deslogueado se lo redirigirá al formulario de login.
+b. Opción 2: Incluir una sección en común en todo el sitio, por ejemplo el
+encabezado. Si el usuario está logueado debe indicar su nombre de usuario. En
+caso de no estar logueado debe tener un link a la página de Login.
+● Los formularios de login y registro no deberían ser accesibles si el usuario ya está
+logueado.
+● El sitio debería contar con una opción para desloguearse.
+● El sitio debería contar con la opción de "Olvidé mi contraseña" funcional.
+● El usuario final debería poder acceder a una página en la cual pueda editar su
+información de perfil.
+
+En el caso de que no hayan podido avanzar con alguna solicitud del SPRINT 1 no se olviden de
+completarlos/mejorarlos para ESTE SPRINT.
+*/
 $email = "";
 $password = "";
 $errores = [];
+$validador = 2;
 
 if($_POST)
 {
@@ -11,38 +48,49 @@ if($_POST)
         if(empty($_POST["email"]))
         {
             $errores["email"] = "Ténes que ingresar un email! lo dejaste en blanco";
+            $password = "";
+            $email = "";        }
+            if(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) && !empty($_POST["email"]))
+            {
+                $errores["email"] = "Lo que pones acá debe ser un email con formato valido, no olvides poner un arroba y poner un dominio";
+                $password = "";
+                $email = "";
+            }
+            else
+            {
+                $email = $_POST["email"];
+            }
         }
-        if(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))
+
+        if(isset($_POST["password"]))
         {
-            $errores["email"] = "Lo que pones acá debe ser un email con formato valido, no olvides poner un arroba y poner un dominio";
+            if(empty($_POST["password"]))
+            {
+                $errores["password"] = "Tenes que poner una contraseña! lo dejaste en blanco<br><br>";
+            }
+            else
+            {
+                if(!empty($email)) 
+                {
+                    $password = $_POST["password"];
+                }
+                else
+                {
+                    $password = "";
+                }            
+            } 
+
         }
-        else
+
+
+        if (count($errores) === 0)
         {
-            $email = $_POST["email"];
-        }
-    }
-
-    if(isset($_POST["password"]))
-    {
-        if(empty($_POST["password"]))
-        {
-            $errores["password"] = "Tenes que poner una contraseña! lo dejaste en blanco";
-        }
-        else
-        {
-            $password = $_POST["password"];
-        }
-    }
 
 
-    if (count($errores) === 0)
-    {
-
-
-        $datos = file_get_contents("usuarios.json");
-        $datos = explode(PHP_EOL, $datos);
-        array_pop($datos);
-        $usuariosfinales = [];
+            $datos = file_get_contents("usuarios.json");
+            $datos = explode(PHP_EOL, $datos);
+            array_pop($datos);
+            $usuariosfinales = [];
        // var_dump($datos);
         foreach($datos as $usuario1) //entra en cada pusición, por cada usuario que tenga lo convierte en json y lo guarda en usrfinal, y lo guarda en el última posicion de usuariosfinales
         {
@@ -60,9 +108,10 @@ if($_POST)
             var_dump($usuario["email"]);
             if($usuario["email"] == $_POST["email"])
             {
-                echo "SE ENCONTRO EL CORREO ........ se buscaba   " .$usuario["email"] ."   se econtro   " . $_POST["email"] . "    <br>";
-              if(password_verify($_POST["password"], $usuario["pass"]))
+                echo "SE ENCONTRO EL CORREO ........ se buscaba   " .$usuario["email"] ."   se encontro   " . $_POST["email"] . "    <br>";
+                if(password_verify($_POST["password"], $usuario["pass"]))
                 {
+                    $validador = 1;
                     echo "<br><br>DATOS CORRECTOS, SE INICIA SESIÓN<br><br>";
                     session_start();
                     $_SESSION["nombre"] = $usuario["nombre"];
@@ -77,12 +126,15 @@ if($_POST)
                 }
                 else
                 {
+                    $email = "";
+                    $password = "";
                     echo "<br><br>USUARIO NO QUIERE RECORDAR LOS DATOS<br><br>";
                 }
             }
             if(count($usuariosfinales) == $salida)
             {
                 echo "<br>DATOS INCORRECTOS<br>";
+                $validador = 0;
             }
         }
 
@@ -144,14 +196,15 @@ if($_POST)
         <form class="form-signin" action="login.php" method="POST" enctype="multipart/form-data">
             <img class="mb-4 logo" src="img/medal.png" alt="">
             <h1 class="h3 mb-3 font-weight-normal">Iniciar Sesion</h1>
-            <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email" required
-            autofocus value="<?php if(empty($_POST["email"])){echo"";}else{echo $_POST["email"];}?>">
+            <small class=""><?php if($validador == 0){echo "DATOS INCORRECTOS";}else{echo "";} ?></small>
+            <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email"
+            autofocus value="<?php echo $email; //if(empty($_POST["email"])){echo"";}else{echo $_POST["email"];}?>">
             <small class=""><?= (isset($errores["email"])) ? $errores["email"] : "" ?></small>
-            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Contraseña" required value="<?php 
-            if(isset($errores["password"])){echo"";}else{echo $password;}?>">
+            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Contraseña" value="<?php 
+            echo $password;//if(isset($errores["password"])){echo"";}else{echo $password;}?>">
             <small class=""><?= (isset($errores["password"])) ? $errores["password"] : "" ?></small>
-            <input type="checkbox" class="chek" value="remember-me" name="recordarme" checked> Recordarme
-            <a href="#" class="recupero-pass">Olvide mi contraseña</a>
+            <input type="checkbox" class="chek" value="remember-me" name="recordarme" <?php if(isset($_POST["recordarme"])){echo "checked";}else{echo "";}?>> Recordarme
+            <a href="recuperarContraseña.php" class="recupero-pass">Olvide mi contraseña</a>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
             <p class="mt-5 mb-3 text-muted">No estas registrado? <a href="register.html">Registrarme</a></p>
         </form>

@@ -179,7 +179,7 @@ if($_POST)
 			<small class=""><?= (isset($errores["repassword"])) ? $errores["repassword"] : "" ?></small>
 			<input type="checkbox" class="chek" value="remember-me" name="recordarme" <?php if(isset($_POST["recordarme"])){echo "checked";}else{echo "";}?>> Recordarme
 			<button class="btn btn-lg btn-primary btn-block" type="submit">Registrarme</button>
-			<p class="mt-5 mb-3 text-muted">Ya estas registrado? <a href="login.html">Ingresar</a></p>
+			<p class="mt-5 mb-3 text-muted">Ya estas registrado? <a href="login.php">Ingresar</a></p>
 		</form>
 	</section>
 	<!--/////////////////////////// FIN REGISTER ///////////////////////////////-->

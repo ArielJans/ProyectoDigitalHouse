@@ -79,3 +79,6 @@ input{
 .recupero-pass {
     margin-left: 1rem;
 }
+small{
+    color: red;
+}

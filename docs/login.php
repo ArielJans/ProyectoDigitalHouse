@@ -47,7 +47,7 @@ if($_POST)
     {
         if(empty($_POST["email"]))
         {
-            $errores["email"] = "Ténes que ingresar un email! lo dejaste en blanco";
+            $errores["email"] = "Ténes que ingresar un email! lo dejaste en blanco <br><br>";
             $password = "";
             $email = "";        }
             if(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) && !empty($_POST["email"]))
@@ -206,7 +206,7 @@ if($_POST)
             <input type="checkbox" class="chek" value="remember-me" name="recordarme" <?php if(isset($_POST["recordarme"])){echo "checked";}else{echo "";}?>> Recordarme
             <a href="recuperarContraseña.php" class="recupero-pass">Olvide mi contraseña</a>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
-            <p class="mt-5 mb-3 text-muted">No estas registrado? <a href="register.html">Registrarme</a></p>
+            <p class="mt-5 mb-3 text-muted">No estas registrado? <a href="register.php">Registrarme</a></p>
         </form>
     </section>
     <!--/////////////////////////// FIN FORM ///////////////////////////////-->

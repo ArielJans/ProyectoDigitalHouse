@@ -185,21 +185,19 @@ if($_POST)
 			if(isset($errores["repassword"])){echo"";}else{echo $repassword;}?>">
 			<small class="text-center"><?= (isset($errores["repassword"])) ? $errores["repassword"] : "" ?></small>
 			<p class="btn text-center" id="imagenAvatar">Imagen de avatar:</p>
-			<input class="btn text-center custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" type="file" name="avatar">
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-  </div>
-  <div class="custom-file">
-    <input class="btn text-center custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" type="file" name="avatar">
-    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-  </div>
-</div>
-			<input type="checkbox" class="chek" value="remember-me" name="recordarme" <?php if(isset($_POST["recordarme"])){echo "checked";}else{echo "";}?>> Recordarme
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Registrarme</button>
-			<p class="mt-5 mb-3 text-muted">Ya estas registrado? <a href="login.php">Ingresar</a></p>
-		</form>
-	</section>
-	<!--/////////////////////////// FIN REGISTER ///////////////////////////////-->
+			<div class="input-group-prepend">
+			</div>
+			<div class="custom-file">
+				<input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="avatar">
+				<label class="custom-file-label" for="inputGroupFile01">Selecciona la imagen</label>
+			</div>
+		</div>
+		<p><input type="checkbox" class="chek" value="remember-me" name="recordarme" <?php if(isset($_POST["recordarme"])){echo "checked";}else{echo "";}?>> Recordarme</p>
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Registrarme</button>
+		<p class="mt-5 mb-3 text-muted">Ya estas registrado? <a href="login.php">Ingresar</a></p>
+	</form>
+</section>
+<!--/////////////////////////// FIN REGISTER ///////////////////////////////-->
 </main>
 
 <!--///////////////////// FOOTER /////////////////////////-->

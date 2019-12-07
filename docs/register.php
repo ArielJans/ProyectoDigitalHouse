@@ -7,7 +7,8 @@ $password = "";
 $repassword = "";
 $salida = 2;
 $elUsuario = [];
-
+$extension = "";
+$imagentemporal = "";
 
 if($_POST)
 {
@@ -52,6 +53,7 @@ if($_POST)
 		{
 			$errores["password"] = "Su contraseña debe tener por lo menos seis caracteres, agregale más";
 			$repassword = "";
+			$password = "";
 
 		}
 		else
@@ -72,21 +74,18 @@ if($_POST)
 			$repassword = "";
 
 		}
+		if (empty($password))
+		{
+			$repassword = "";
+		}
 		else
 		{
 			$repassword = $_POST["repassword"];
 		}
 	}
-	var_dump($errores);
-	echo "<br>";
-	var_dump($_POST);
-
-	echo "<br>Antes de validar:::::" .$salida;
 	if (count($errores) === 0)
 	{
 		$salida = 0;
-		echo "<br>SIN ERRORES<br>" .$salida;
-
 		if (count($errores) === 0)
 		{
 			$elUsuario = [
@@ -96,20 +95,28 @@ if($_POST)
 			];
 		}
 
+		if($_FILES)
+		{
+			$extension = pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);	//para tener la extensión del archivo
+			$nombredelproyecto = dirname(__FILE__);	//para saber la ruta del archivo .php actual
+			$nombredelproyecto = $nombredelproyecto . "\img\avatares";
+			$nombredelproyecto = $nombredelproyecto . "\avatar_" . uniqid() . "." . $extension; //darle un nombre unico
+			move_uploaded_file($imagentemporal, $nombredelproyecto); //guardar la imagen en el servidor
+		}
+
 		$usuarioenjson = json_encode($elUsuario);
 		file_put_contents("usuarios.json", $usuarioenjson . PHP_EOL, FILE_APPEND);
 		session_start();
 		$_SESSION["nombre"] = $elUsuario["nombre"];
 		$_SESSION["email"] = $elUsuario["email"];
-
-		//header("Location: login.php");
-		//exit;
+		$_SESSION["avatar"] = $nombredelproyecto;
+		header("Location: login.php");
+		exit;
 
 	}
 	else
 	{
 		$salida = 1;
-		echo "<br>POSEE ERRORES<br>" .$salida;
 	}
 
 
@@ -164,63 +171,64 @@ if($_POST)
 <main>
 	<!--//////////////////// INICIO REGISTER //////////////////////////// -->
 	<section class="text-center has-success">
-		<form class="form-signin" action="" method="POST" enctype="multipart/form-data">
-			<img class="mb-4 logo" src="img/medal.png" alt="">
-			<h1 class="h3 mb-3 font-weight-normal"><?php var_dump($_POST);?> </h1>
-			<input type="text" id="inputName" name="nombre" class="form-control " placeholder="Nombre" value="<?php if(empty($_POST["nombre"])){echo"";}else{echo $_POST["nombre"];}?>">
-			<small class=""><?=(isset($errores["nombre"])) ? $errores["nombre"] : "" ?></small>
-			<input type="email" id="inputEmail" name="email" class="form-control " placeholder="Email" value="<?php if(empty($_POST["email"])){echo"";}else{echo $_POST["email"];}?>">
-			<small class=""><?= (isset($errores["email"])) ? $errores["email"] : "" ?></small>
-			<input type="text" id="inputPassword" name="password" class="form-control " placeholder="Contraseña" value="<?php 
-			if(isset($errores["password"])){echo"";}else{echo $password;}?>">
-			<small class=""><?= (isset($errores["password"])) ? $errores["password"] : "" ?></small>
-			<input type="text" id="rePassword" name="repassword" class="form-control " placeholder="Repetir Contraseña" value="<?php 
-			if(isset($errores["repassword"])){echo"";}else{echo $repassword;}?>">
-			<small class=""><?= (isset($errores["repassword"])) ? $errores["repassword"] : "" ?></small>
-			<input type="checkbox" class="chek" value="remember-me" name="recordarme" <?php if(isset($_POST["recordarme"])){echo "checked";}else{echo "";}?>> Recordarme
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Registrarme</button>
-			<p class="mt-5 mb-3 text-muted">Ya estas registrado? <a href="login.php">Ingresar</a></p>
-		</form>
-	</section>
-	<!--/////////////////////////// FIN REGISTER ///////////////////////////////-->
-</main>
+			<form class="form-signin" action="" method="POST" enctype="multipart/form-data">
+				<img class="mb-4 logo" src="img/medal.png" alt="">
+				<h1 class="h3 mb-3 font-weight-normal"><?php// var_dump($_POST);?></h1>
+				<input type="text" id="inputName" name="nombre" class="form-control " placeholder="Nombre" value="<?php if(empty($_POST["nombre"])){echo"";}else{echo $_POST["nombre"];}?>">
+				<small class=""><?=(isset($errores["nombre"])) ? $errores["nombre"] : "" ?></small>
+				<input type="email" id="inputEmail" name="email" class="form-control " placeholder="Email" value="<?php if(empty($_POST["email"])){echo"";}else{echo $_POST["email"];}?>">
+				<small class=""><?= (isset($errores["email"])) ? $errores["email"] : "" ?></small>
+				<input type="password" id="inputPassword" name="password" class="form-control " placeholder="Contraseña" value="<?php 
+				if(isset($errores["password"])){echo"";}else{echo $password;}?>">
+				<small class=""><?= (isset($errores["password"])) ? $errores["password"] : "" ?></small>
+				<input type="password" id="rePassword" name="repassword" class="form-control " placeholder="Repetir Contraseña" value="<?php 
+				if(isset($errores["repassword"])){echo"";}else{echo $repassword;}?>">
+				<small class=""><?= (isset($errores["repassword"])) ? $errores["repassword"] : "" ?></small>
+				<input class="btn" type="file" name="avatar"><br>
+				<input type="checkbox" class="chek" value="remember-me" name="recordarme" <?php if(isset($_POST["recordarme"])){echo "checked";}else{echo "";}?>> Recordarme
+				<button class="btn btn-lg btn-primary btn-block" type="submit">Registrarme</button>
+				<p class="mt-5 mb-3 text-muted">Ya estas registrado? <a href="login.php">Ingresar</a></p>
+			</form>
+		</section>
+		<!--/////////////////////////// FIN REGISTER ///////////////////////////////-->
+	</main>
 
-<!--///////////////////// FOOTER /////////////////////////-->
-<footer class="container-fluid bg-inverse">
-	<div class="row text-white py-4 text-white">
-		<div class="col-md-3 footer-brand">
-			<img src="img/medal.png" class="float-left mr-3 imgfoter" alt="#">
-			<h4 class="namber">QUESTION RACE</h4>
-			<div class="blockquote-footer">Todos los derechos reservados <cite title="Source Title">2019</cite>
+	<!--///////////////////// FOOTER /////////////////////////-->
+	<footer class="container-fluid bg-inverse">
+		<div class="row text-white py-4 text-white">
+			<div class="col-md-3 footer-brand">
+				<img src="img/medal.png" class="float-left mr-3 imgfoter" alt="#">
+				<h4 class="namber">QUESTION RACE</h4>
+				<div class="blockquote-footer">Todos los derechos reservados <cite title="Source Title">2019</cite>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<h4 class="lead">Contacto</h4>
+				<p>Cualquier consulta que tengas no dudes en contáctanos haciendo click <a href="contacto.html">aquí</a>
+				</p>
+			</div>
+			<div class="col-md-3">
+				<h4 class="lead">Términos y condiciones</h4>
+				<p>Lee nuestros <a href="#">términos</a> y <a href="#">condiciones</a> aquí para saber más sobre
+				nosotros</p>
+			</div>
+			<div class="col-md-3">
+				<h4 class="lead">Síguenos</h4>
+				<a href="#"><span class="badge badge-primary">Facebook</span></a>
 			</div>
 		</div>
-		<div class="col-md-3">
-			<h4 class="lead">Contacto</h4>
-			<p>Cualquier consulta que tengas no dudes en contáctanos haciendo click <a href="contacto.html">aquí</a>
-			</p>
-		</div>
-		<div class="col-md-3">
-			<h4 class="lead">Términos y condiciones</h4>
-			<p>Lee nuestros <a href="#">términos</a> y <a href="#">condiciones</a> aquí para saber más sobre
-			nosotros</p>
-		</div>
-		<div class="col-md-3">
-			<h4 class="lead">Síguenos</h4>
-			<a href="#"><span class="badge badge-primary">Facebook</span></a>
-		</div>
-	</div>
-</footer>
-<!--///////////////////// FIN FOOTER /////////////////////////-->
+	</footer>
+	<!--///////////////////// FIN FOOTER /////////////////////////-->
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
 </body>
 
 </html>

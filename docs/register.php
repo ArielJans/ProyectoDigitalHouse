@@ -66,11 +66,11 @@ if($_POST)
 	{
 		if(empty($_POST["repassword"]))
 		{
-			$errores["repassword"] = "Este campo tiene que estar lleno, cargalo!<br><br>";
+			$errores["repassword"] = "Este campo tiene que estar lleno, cargalo!";
 		}
 		if(strcmp($_POST["repassword"], $_POST["password"]) && !empty($_POST["repassword"]))
 		{
-			$errores["repassword"] = "Contraseñas no coinciden, favor de verificar<br><br>";
+			$errores["repassword"] = "Contraseñas no coinciden, favor de verificar";
 			$repassword = "";
 
 		}
@@ -171,64 +171,73 @@ if($_POST)
 <main>
 	<!--//////////////////// INICIO REGISTER //////////////////////////// -->
 	<section class="text-center has-success">
-			<form class="form-signin" action="" method="POST" enctype="multipart/form-data">
-				<img class="mb-4 logo" src="img/medal.png" alt="">
-				<h1 class="h3 mb-3 font-weight-normal"><?php// var_dump($_POST);?></h1>
-				<input type="text" id="inputName" name="nombre" class="form-control " placeholder="Nombre" value="<?php if(empty($_POST["nombre"])){echo"";}else{echo $_POST["nombre"];}?>">
-				<small class=""><?=(isset($errores["nombre"])) ? $errores["nombre"] : "" ?></small>
-				<input type="email" id="inputEmail" name="email" class="form-control " placeholder="Email" value="<?php if(empty($_POST["email"])){echo"";}else{echo $_POST["email"];}?>">
-				<small class=""><?= (isset($errores["email"])) ? $errores["email"] : "" ?></small>
-				<input type="password" id="inputPassword" name="password" class="form-control " placeholder="Contraseña" value="<?php 
-				if(isset($errores["password"])){echo"";}else{echo $password;}?>">
-				<small class=""><?= (isset($errores["password"])) ? $errores["password"] : "" ?></small>
-				<input type="password" id="rePassword" name="repassword" class="form-control " placeholder="Repetir Contraseña" value="<?php 
-				if(isset($errores["repassword"])){echo"";}else{echo $repassword;}?>">
-				<small class=""><?= (isset($errores["repassword"])) ? $errores["repassword"] : "" ?></small>
-				<input class="btn" type="file" name="avatar"><br>
-				<input type="checkbox" class="chek" value="remember-me" name="recordarme" <?php if(isset($_POST["recordarme"])){echo "checked";}else{echo "";}?>> Recordarme
-				<button class="btn btn-lg btn-primary btn-block" type="submit">Registrarme</button>
-				<p class="mt-5 mb-3 text-muted">Ya estas registrado? <a href="login.php">Ingresar</a></p>
-			</form>
-		</section>
-		<!--/////////////////////////// FIN REGISTER ///////////////////////////////-->
-	</main>
+		<form class="form-signin" action="" method="POST" enctype="multipart/form-data">
+			<img class="mb-4 logo" src="img/medal.png" alt="">
+			<h1 class="h3 mb-3 font-weight-normal">Registrarse<?php// var_dump($_POST);?></h1>
+			<input type="text" id="inputName" name="nombre" class="form-control " placeholder="Nombre" value="<?php if(empty($_POST["nombre"])){echo"";}else{echo $_POST["nombre"];}?>">
+			<small class=""><?=(isset($errores["nombre"])) ? $errores["nombre"] : "" ?></small>
+			<input type="email" id="inputEmail" name="email" class="form-control " placeholder="Email" value="<?php if(empty($_POST["email"])){echo"";}else{echo $_POST["email"];}?>">
+			<small class=""><?= (isset($errores["email"])) ? $errores["email"] : "" ?></small>
+			<input type="password" id="inputPassword" name="password" class="form-control " placeholder="Contraseña" value="<?php 
+			if(isset($errores["password"])){echo"";}else{echo $password;}?>">
+			<small class=""><?= (isset($errores["password"])) ? $errores["password"] : "" ?></small>
+			<input type="password" id="rePassword" name="repassword" class="form-control " placeholder="Repetir Contraseña" value="<?php 
+			if(isset($errores["repassword"])){echo"";}else{echo $repassword;}?>">
+			<small class="text-center"><?= (isset($errores["repassword"])) ? $errores["repassword"] : "" ?></small>
+			<p class="btn text-center" id="imagenAvatar">Imagen de avatar:</p>
+			<input class="btn text-center custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" type="file" name="avatar">
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+  </div>
+  <div class="custom-file">
+    <input class="btn text-center custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" type="file" name="avatar">
+    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+  </div>
+</div>
+			<input type="checkbox" class="chek" value="remember-me" name="recordarme" <?php if(isset($_POST["recordarme"])){echo "checked";}else{echo "";}?>> Recordarme
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Registrarme</button>
+			<p class="mt-5 mb-3 text-muted">Ya estas registrado? <a href="login.php">Ingresar</a></p>
+		</form>
+	</section>
+	<!--/////////////////////////// FIN REGISTER ///////////////////////////////-->
+</main>
 
-	<!--///////////////////// FOOTER /////////////////////////-->
-	<footer class="container-fluid bg-inverse">
-		<div class="row text-white py-4 text-white">
-			<div class="col-md-3 footer-brand">
-				<img src="img/medal.png" class="float-left mr-3 imgfoter" alt="#">
-				<h4 class="namber">QUESTION RACE</h4>
-				<div class="blockquote-footer">Todos los derechos reservados <cite title="Source Title">2019</cite>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<h4 class="lead">Contacto</h4>
-				<p>Cualquier consulta que tengas no dudes en contáctanos haciendo click <a href="contacto.html">aquí</a>
-				</p>
-			</div>
-			<div class="col-md-3">
-				<h4 class="lead">Términos y condiciones</h4>
-				<p>Lee nuestros <a href="#">términos</a> y <a href="#">condiciones</a> aquí para saber más sobre
-				nosotros</p>
-			</div>
-			<div class="col-md-3">
-				<h4 class="lead">Síguenos</h4>
-				<a href="#"><span class="badge badge-primary">Facebook</span></a>
+<!--///////////////////// FOOTER /////////////////////////-->
+<footer class="container-fluid bg-inverse">
+	<div class="row text-white py-4 text-white">
+		<div class="col-md-3 footer-brand">
+			<img src="img/medal.png" class="float-left mr-3 imgfoter" alt="#">
+			<h4 class="namber">QUESTION RACE</h4>
+			<div class="blockquote-footer">Todos los derechos reservados <cite title="Source Title">2019</cite>
 			</div>
 		</div>
-	</footer>
-	<!--///////////////////// FIN FOOTER /////////////////////////-->
+		<div class="col-md-3">
+			<h4 class="lead">Contacto</h4>
+			<p>Cualquier consulta que tengas no dudes en contáctanos haciendo click <a href="contacto.html">aquí</a>
+			</p>
+		</div>
+		<div class="col-md-3">
+			<h4 class="lead">Términos y condiciones</h4>
+			<p>Lee nuestros <a href="#">términos</a> y <a href="#">condiciones</a> aquí para saber más sobre
+			nosotros</p>
+		</div>
+		<div class="col-md-3">
+			<h4 class="lead">Síguenos</h4>
+			<a href="#"><span class="badge badge-primary">Facebook</span></a>
+		</div>
+	</div>
+</footer>
+<!--///////////////////// FIN FOOTER /////////////////////////-->
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-	crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-	crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-	crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+crossorigin="anonymous"></script>
 </body>
 
 </html>

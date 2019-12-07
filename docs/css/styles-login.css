@@ -37,7 +37,8 @@ footer{
 }
 
 input{
-    margin-bottom: 1rem;
+    margin-bottom: 0.35rem;
+    margin-top: 0.35rem;
 }
 
 
@@ -81,4 +82,14 @@ input{
 }
 small{
     color: red;
+}
+
+#imagenAvatar{
+    margin: 0rem;
+    padding: 0rem;
+    border-top-width: 10px;
+}
+
+#cargarAvatar{
+    text-align: center;
 }

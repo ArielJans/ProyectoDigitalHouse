@@ -197,7 +197,7 @@ if($_POST)
                 <p class="mt-5 mb-3 text-muted">No estas registrado? <a href="register.php">Registrarme</a></p>
             </form>
         </section>
-        <!--/////////////////////////// FIN FORM ///////////////////////////////-->
+        <!--/////////////////////////// FIN FORM ////////////////////////////////-->
     </main>
 
     <!--///////////////////// FOOTER /////////////////////////-->

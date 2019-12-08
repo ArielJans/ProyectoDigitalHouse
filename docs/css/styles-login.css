@@ -93,3 +93,7 @@ small{
 #cargarAvatar{
     text-align: center;
 }
+
+.custom-file-label::after {
+      content: "Avatar"!important;
+    }

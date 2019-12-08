@@ -158,38 +158,13 @@ if($_POST)
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/styles-login.css">
-	<title>REGISTRO</title>
+	<title>Registrarse</title>
 </head>
 
 <body>
 	<!--//////////////////// INICIO HEADER/NAV ////////////////////////////-->
-	<header>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<a class="navbar-brand" href="index.html">QUESTION RACE</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item active">
-					<a class="nav-link" href="login.html">JUGAR</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="ranking-de-usuarios.html">RANKING</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="contacto.html">CONTACTO</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="preguntas-frecuentes.html">AYUDA</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="admin.html">ADMIN</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
+    <header>
+        <?php include("funciones/navbar.php");?>
 </header>
 <!--//////////////////// FIN HEADER/NAV ////////////////////////////-->
 <main>
@@ -223,30 +198,7 @@ if($_POST)
 </main>
 
 <!--///////////////////// FOOTER /////////////////////////-->
-<footer class="container-fluid bg-inverse">
-	<div class="row text-white py-4 text-white">
-		<div class="col-md-3 footer-brand">
-			<img src="img/medal.png" class="float-left mr-3 imgfoter" alt="#">
-			<h4 class="namber">QUESTION RACE</h4>
-			<div class="blockquote-footer">Todos los derechos reservados <cite title="Source Title">2019</cite>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<h4 class="lead">Contacto</h4>
-			<p>Cualquier consulta que tengas no dudes en contáctanos haciendo click <a href="contacto.html">aquí</a>
-			</p>
-		</div>
-		<div class="col-md-3">
-			<h4 class="lead">Términos y condiciones</h4>
-			<p>Lee nuestros <a href="#">términos</a> y <a href="#">condiciones</a> aquí para saber más sobre
-			nosotros</p>
-		</div>
-		<div class="col-md-3">
-			<h4 class="lead">Síguenos</h4>
-			<a href="#"><span class="badge badge-primary">Facebook</span></a>
-		</div>
-	</div>
-</footer>
+<?php include("funciones/footer.php"); ?>
 <!--///////////////////// FIN FOOTER /////////////////////////-->
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

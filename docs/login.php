@@ -105,40 +105,15 @@ if($_POST)
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="css/styles-login.css">
-        <title>LOGIN</title>
+        <title>Iniciar Sesión</title>
     </head>
 
     <body>
 
         <!--//////////////////// INICIO HEADER/NAV ////////////////////////////-->
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="index.html">QUESTION RACE</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="login.html">JUGAR</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ranking-de-usuarios.html">RANKING</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contacto.html">CONTACTO</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="preguntas-frecuentes.html">AYUDA</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="admin.html">ADMIN</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <header>
+        <?php include("funciones/navbar.php");?>
+</header>
     <!--//////////////////// FIN HEADER/NAV ////////////////////////////-->
 
     <main>
@@ -154,9 +129,9 @@ if($_POST)
                 <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Contraseña" value="<?php 
                 echo $password;//if(isset($errores["password"])){echo"";}else{echo $password;}?>">
                 <small class=""><?= (isset($errores["password"])) ? $errores["password"] : "" ?></small>
-                <input type="checkbox" class="chek" value="remember-me" name="recordarme" <?php if(isset($_POST["recordarme"])){echo "checked";}else{echo "";}?>> Recordarme
+                <input type="checkbox" class="chek" value="remember-me" name="recordarme" <?php if(isset($_POST["recordarme"])){echo "checked";}else{echo "";}?>><h7>Recordarme</h7>
                 <a href="recuperarContraseña.php" class="recupero-pass">Olvide mi contraseña</a>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+                <button class="btn btn-lg btn-primary btn-block" id="botonIngresar" type="submit">Ingresar</button>
                 <p class="mt-5 mb-3 text-muted">No estas registrado? <a href="register.php">Registrarme</a></p>
             </form>
         </section>
@@ -164,30 +139,7 @@ if($_POST)
     </main>
 
     <!--///////////////////// FOOTER /////////////////////////-->
-    <footer class="container-fluid bg-inverse">
-        <div class="row text-white py-4 text-white">
-            <div class="col-md-3 footer-brand">
-                <img src="img/medal.png" class="float-left mr-3 imgfoter" alt="#">
-                <h4 class="namber">QUESTION RACE</h4>
-                <div class="blockquote-footer">Todos los derechos reservados <cite title="Source Title">2019</cite>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <h4 class="lead">Contacto</h4>
-                <p>Cualquier consulta que tengas no dudes en contáctanos haciendo click <a href="contacto.html">aquí</a>
-                </p>
-            </div>
-            <div class="col-md-3">
-                <h4 class="lead">Términos y condiciones</h4>
-                <p>Lee nuestros <a href="#">términos</a> y <a href="#">condiciones</a> aquí para saber más sobre
-                nosotros</p>
-            </div>
-            <div class="col-md-3">
-                <h4 class="lead">Síguenos</h4>
-                <a href="#"><span class="badge badge-primary">Facebook</span></a>
-            </div>
-        </div>
-    </footer>
+<?php include("funciones/footer.php"); ?>
     <!--///////////////////// FIN FOOTER /////////////////////////-->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

@@ -9,33 +9,8 @@
   <link rel="stylesheet" href="css/contacto.css">
 </head>
 
-<header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.html">QUESTION RACE</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="login.html">JUGAR<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="ranking-de-usuarios.html">RANKING</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="contacto.html">CONTACTO</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="preguntas-frecuentes.html">AYUDA</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="admin.html">ADMIN</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+    <header>
+        <?php include("funciones/navbar.php");?>
 </header>
 
 <body>

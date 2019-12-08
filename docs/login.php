@@ -1,42 +1,5 @@
 
 <?php
-
-/*
-Requerimientos obligatorios
-La página de registro y la página de login deben cumplir con las siguientes solicitudes
-Para todos los modelos de negocio
-●   Debe existir una validación de los formularios (login y register) del lado del servidor.
-●   En caso de que haya datos incorrectos o no válidos la página debería mostrar cuáles
-son los errores.
-●   En caso de que haya datos incorrectos o no válidos los datos que estaban correctos
-deben seguirse viendo en pantalla (persistencia).
-●   En la registración, el usuario final debería poder subir una foto de perfil.
-●   En ambos formularios debería estar disponible la opción de "Recordar usuario”.
-●   Debemos tener un archivo JSON en donde se guarde el/los usuario/s.
-
-3
-
-Requerimientos opcionales (ojo, mejoran MUCHO la experiencia
-de usuario)
-Para todos los modelos de negocio
-● El sitio debería distinguir usuarios logueados de no logueados. Para ésto deberían
-implementar una de las dos funcionalidades descritas a continuación:
-a. Opción 1: Al loguearse, el usuario debe ser enviado a una página de BIENVENIDA.
-Si quiere acceder a este sitio deslogueado se lo redirigirá al formulario de login.
-b. Opción 2: Incluir una sección en común en todo el sitio, por ejemplo el
-encabezado. Si el usuario está logueado debe indicar su nombre de usuario. En
-caso de no estar logueado debe tener un link a la página de Login.
-● Los formularios de login y registro no deberían ser accesibles si el usuario ya está
-logueado.
-● El sitio debería contar con una opción para desloguearse.
-● El sitio debería contar con la opción de "Olvidé mi contraseña" funcional.
-● El usuario final debería poder acceder a una página en la cual pueda editar su
-información de perfil.
-
-En el caso de que no hayan podido avanzar con alguna solicitud del SPRINT 1 no se olviden de
-completarlos/mejorarlos para ESTE SPRINT.
-*/
-
 $email = "";
 $password = "";
 $errores = [];
@@ -88,7 +51,7 @@ if($_POST)
             $datos = explode(PHP_EOL, $datos);
             array_pop($datos);
             $usuariosfinales = [];
-            foreach($datos as $usuario1) //entra en cada pusición, por cada usuario que tenga lo convierte en json y lo guarda en usrfinal, y lo guarda en el última posicion de usuariosfinales
+            foreach($datos as $usuario1) //entra en cada posición, por cada usuario que tenga lo convierte en json y lo guarda en usuariofinal, y lo guarda en el última posicion de usuariosfinales
             {
                 $usuariofinal = json_decode($usuario1, true);
                 $usuariosfinales[] = $usuariofinal;
@@ -97,7 +60,7 @@ if($_POST)
             foreach($usuariosfinales as $usuario)
             {
                 $salida++;
-                var_dump($usuario["email"]);
+                //var_dump($usuario["email"]);
                 if($usuario["email"] == $_POST["email"])
                 {
                     if(password_verify($_POST["password"], $usuario["pass"]))
@@ -184,7 +147,7 @@ if($_POST)
             <form class="form-signin" action="login.php" method="POST" enctype="multipart/form-data">
                 <img class="mb-4 logo" src="img/medal.png" alt="">
                 <h1 class="h3 mb-3 font-weight-normal">Iniciar Sesion</h1>
-                <small class=""><?php if($validador == 0){echo "DATOS INCORRECTOS";}else{echo "";} ?></small>
+                <small class=""><?php if($validador == 0){echo "Datos incorrectos";}else{echo "";} ?></small>
                 <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email"
                 autofocus value="<?php echo $email; //if(empty($_POST["email"])){echo"";}else{echo $_POST["email"];}?>">
                 <small class=""><?= (isset($errores["email"])) ? $errores["email"] : "" ?></small>

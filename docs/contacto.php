@@ -14,79 +14,23 @@
 </header>
 
 <body>
-    <!-- <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand" href="index.html">QUESTION RACE</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="login.html">JUGAR<span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="ranking-de-usuarios.html">RANKING</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="contacto.html">CONTACTO</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="preguntas-frecuentes.html">AYUDA</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header> -->
       
 <main>
-  <div class="container" id="a">
-    <section class="row">
-      <div class="col-12" id="espacio">
-        <form>
-          <h1>Contacto</h1>
-          <div class="form-group">
-            <label for="exampleFormControlInput1" class="subnombres">Ingrese su nombre:</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nombre">
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlInput1" class="subnombres">Ingrese su correo electronico:</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nombre@dominio.com">
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1" class="subnombres">Ingrese su mensaje:</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="mensaje"></textarea>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
-          </div>
-        </form>
-      </div>
-    </section>
 
+	<section class="text-center subnombre">
+            <form class="" action="login.php" method="POST" enctype="multipart/form-data">
+                <img class="mb-4 logo" src="img/medal.png" alt="">
+                <h1 class="h3 mb-3 font-weight-normal">Contacto</h1>
+                <input type="email" name="nombre" class="form-control subnombre" placeholder="Nombre"
+                autofocus value="">
+                <input type="password" name="email" class="form-control subnombre" placeholder="Email" value="">
+                <textarea class="form-control subnombre" rows="3" placeholder="Escriba su mensaje aquí"></textarea>
+                <button class="btn btn-lg btn-primary btn-block subnombre enviar" type="submit">Enviar</button>
+            </form>
+        </section>
   </main>
 
-  <footer class="container-fluid bg-inverse">
-    <div class="row text-white py-4 text-white">
-        <div class="col-md-3">
-            <img src="img/medal.png" class="float-left mr-3 imgfoter" alt="#">
-            <h4 class="namber">QUESTION RACE</h4>
-            <div class="blockquote-footer">Todos los derechos reservados <cite title="Source Title">2019</cite>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <h4 class="lead">Lorem ipsum</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, fugit?</p>
-        </div>
-        <div class="col-md-3">
-            <h4 class="lead">Lorem ipsum</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quidem!</p>
-        </div>
-        <div class="col-md-3">
-            <h4 class="lead">Síguenos</h4>
-            <a href="#"><span class="badge badge-primary">Facebook</span></a>
-        </div>
-    </div>
-</footer>
+<?php include("funciones/footer.php"); ?>
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

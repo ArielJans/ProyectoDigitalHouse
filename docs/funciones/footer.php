@@ -8,7 +8,7 @@
             </div>
             <div class="col-md-3">
                 <h4 class="lead">Contacto</h4>
-                <p>Cualquier consulta que tengas no dudes en contáctanos haciendo click <a href="contacto.html">aquí</a></p>
+                <p>Cualquier consulta que tengas no dudes en contáctanos haciendo click <a href="contacto.php">aquí</a></p>
             </div>
             <div class="col-md-3">
                 <h4 class="lead">Términos y condiciones</h4>

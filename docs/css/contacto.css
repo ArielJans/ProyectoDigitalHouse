@@ -13,7 +13,7 @@ body {
     height: 72px;
 }
 .text-center{
-    width: 30vw;
+    width: 40vw;
     margin: 0 auto;
 }
 
@@ -22,13 +22,16 @@ body {
 
 }
 
+@media (max-width: 950px) {
+    .text-center {
+      width:70vw;
+  }
+}
+
 .enviar{
   margin-top: 25px;
   margin-bottom: 50px;
 }
-
-
-
 
 footer{
   background-color:  #4c3673d4;

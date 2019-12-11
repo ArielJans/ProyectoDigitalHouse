@@ -5,10 +5,12 @@
 	        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="css/styles-bienvenida.css">
+
 </head>
 <header>
         <?php include("funciones/navbar.php");?>
         <img class="img-header text-center" src="./img/bienvenido.png" alt="">
+        <meta http-equiv="refresh" content="3;URL=juego.php">
 </header>
 <body>
 

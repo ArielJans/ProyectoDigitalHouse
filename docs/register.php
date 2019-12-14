@@ -119,8 +119,8 @@ if($_POST)
 				$_SESSION["avatar"] = $nombredelproyecto;
 			}
 
-		header("Location: login.php");
-		exit;
+			header("Location: login.php");
+			exit;
 
 		}
 		else
@@ -163,47 +163,47 @@ if($_POST)
 
 <body>
 	<!--//////////////////// INICIO HEADER/NAV ////////////////////////////-->
-    <header>
-        <?php include("funciones/navbar.php");?>
-</header>
-<!--//////////////////// FIN HEADER/NAV ////////////////////////////-->
-<main>
-	<!--//////////////////// INICIO REGISTER //////////////////////////// -->
-	<section class="text-center has-success">
-		<form class="form-signin" action="" method="POST" enctype="multipart/form-data">
-			<img class="mb-4 logo" src="img/medal.png" alt="">
-			<h1 class="h3 mb-3 font-weight-normal">Registrarse<?php// var_dump($_POST);?></h1>
-			<input type="text" id="inputName" name="nombre" class="form-control " placeholder="Nombre" value="<?php if(empty($_POST["nombre"])){echo"";}else{echo $nombre;}?>"> <?php //se modifica $_POST["nombre"] por $nombre ?>
-			<small class=""><?=(isset($errores["nombre"])) ? $errores["nombre"] : "" ?></small>
-			<input type="email" id="inputEmail" name="email" class="form-control " placeholder="Email" value="<?php if(empty($_POST["email"])){echo"";}else{echo $email;}?>"> <?php //se modifica $_POST["email"] por $email ?>
-			<small class=""><?= (isset($errores["email"])) ? $errores["email"] : "" ?></small>
-			<input type="password" id="inputPassword" name="password" class="form-control " placeholder="Contraseña" value="<?php 
-			if(isset($errores["password"])){echo"";}else{echo $password;}?>">
-			<small class=""><?= (isset($errores["password"])) ? $errores["password"] : "" ?></small>
-			<input type="password" id="rePassword" name="repassword" class="form-control " placeholder="Repetir Contraseña" value="<?php 
-			if(isset($errores["repassword"])){echo"";}else{echo $repassword;}?>">
-			<small class="text-center"><?= (isset($errores["repassword"])) ? $errores["repassword"] : "" ?></small>
-			<p class="btn text-center" id="imagenAvatar">Imagen de avatar:</p>
-			<div class="input-group-prepend">
-			</div>
-			<div class="custom-file">
-				<input type="file" class="" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="avatar">
-			</div>
-			<p><input type="checkbox" class="chek" value="remember-me" name="recordarme" <?php if(isset($_POST["recordarme"])){echo "checked";}else{echo "";}?>> Recordarme</p>
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Registrarme</button>
-			<p class="mt-5 mb-3 text-muted">Ya estas registrado? <a href="login.php">Ingresar</a></p>
-		</form>
-	</section>
-	<!--/////////////////////////// FIN REGISTER ///////////////////////////////-->
-</main>
+	<header>
+		<?php include("funciones/navbar.php");?>
+	</header>
+	<!--//////////////////// FIN HEADER/NAV ////////////////////////////-->
+	<main>
+		<!--//////////////////// INICIO REGISTER //////////////////////////// -->
+		<section class="text-center has-success">
+			<form class="form-signin" action="" method="POST" enctype="multipart/form-data">
+				<img class="mb-4 logo" src="img/medal.png" alt="">
+				<h1 class="h3 mb-3 font-weight-normal">Registrarse<?php// var_dump($_POST);?></h1>
+				<input type="text" id="inputName" name="nombre" class="form-control " placeholder="Nombre" value="<?php if(empty($_POST["nombre"])){echo"";}else{echo $nombre;}?>"> <?php //se modifica $_POST["nombre"] por $nombre ?>
+				<small class=""><?=(isset($errores["nombre"])) ? $errores["nombre"] : "" ?></small>
+				<input type="email" id="inputEmail" name="email" class="form-control " placeholder="Email" value="<?php if(empty($_POST["email"])){echo"";}else{echo $email;}?>"> <?php //se modifica $_POST["email"] por $email ?>
+				<small class=""><?= (isset($errores["email"])) ? $errores["email"] : "" ?></small>
+				<input type="password" id="inputPassword" name="password" class="form-control " placeholder="Contraseña" value="<?php 
+				if(isset($errores["password"])){echo"";}else{echo $password;}?>">
+				<small class=""><?= (isset($errores["password"])) ? $errores["password"] : "" ?></small>
+				<input type="password" id="rePassword" name="repassword" class="form-control " placeholder="Repetir Contraseña" value="<?php 
+				if(isset($errores["repassword"])){echo"";}else{echo $repassword;}?>">
+				<small class="text-center"><?= (isset($errores["repassword"])) ? $errores["repassword"] : "" ?></small>
+				<p class="btn text-center" id="imagenAvatar">Imagen de avatar:</p>
+				<div class="input-group-prepend">
+				</div>
+				<div class="custom-file">
+					<input type="file" class="" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="avatar">
+				</div>
+				<p><input type="checkbox" class="chek" value="remember-me" name="recordarme" <?php if(isset($_POST["recordarme"])){echo "checked";}else{echo "";}?>> Recordarme</p>
+				<button class="btn btn-lg btn-primary btn-block" type="submit">Registrarme</button>
+				<p class="mt-5 mb-3 text-muted">Ya estas registrado? <a href="login.php">Ingresar</a></p>
+			</form>
+		</section>
+		<!--/////////////////////////// FIN REGISTER ///////////////////////////////-->
+	</main>
 
-<!--///////////////////// FOOTER /////////////////////////-->
-<?php include("funciones/footer.php"); ?>
-<!--///////////////////// FIN FOOTER /////////////////////////-->
+	<!--///////////////////// FOOTER /////////////////////////-->
+	<?php include("funciones/footer.php"); ?>
+	<!--///////////////////// FIN FOOTER /////////////////////////-->
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 </body>
 

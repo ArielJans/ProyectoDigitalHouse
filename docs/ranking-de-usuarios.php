@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles-ranking.css">
     <title>Ranking</title>
 </head>
@@ -14,7 +13,7 @@
 <body>
     <header>
         <?php include("funciones/navbar.php");?>
-</header>
+    </header>
     <main class="row">
         <section class="left col-md-4">
             <h1 class="name">1° Puesto </h1>
@@ -59,7 +58,7 @@
                     </div>
                 </a>
                 <a href="perfil.html" class="list-group-item list-group-item-action list-group-item-primary"><strong
-                        class="puesto">3°</strong> <img class="img-user" src="img/user1.svg" alt="">Rauel
+                    class="puesto">3°</strong> <img class="img-user" src="img/user1.svg" alt="">Rauel
                     <div class="distinciones">
                         <img class="img-user2" src="img/copa.png" alt="">
                         <img class="img-user2" src="img/medal.png" alt="">
@@ -71,7 +70,7 @@
                     </div>
                 </a>
                 <a href="perfil.html" class="list-group-item list-group-item-action list-group-item-secondary"><strong
-                        class="puesto">4°</strong> <img class="img-user" src="img/user1.svg" alt="">Pepe
+                    class="puesto">4°</strong> <img class="img-user" src="img/user1.svg" alt="">Pepe
                     <div class="distinciones">
                         <img class="img-user2" src="img/copa.png" alt="">
                         <img class="img-user2" src="img/winner.png" alt="">
@@ -83,7 +82,7 @@
                     </div>
                 </a>
                 <a href="#" class="list-group-item list-group-item-action list-group-item-success"><strong
-                        class="puesto">5°</strong> <img class="img-user" src="img/user2.svg" alt="">Estrella
+                    class="puesto">5°</strong> <img class="img-user" src="img/user2.svg" alt="">Estrella
                     <div class="distinciones">
                         <img class="img-user2" src="img/copa.png" alt="">
                         <img class="img-user2" src="img/winner.png" alt="">
@@ -94,7 +93,7 @@
                     </div>
                 </a>
                 <a href="#" class="list-group-item list-group-item-action list-group-item-danger"><strong
-                        class="puesto">6°</strong> <img class="img-user" src="img/user1.svg" alt="">Nando
+                    class="puesto">6°</strong> <img class="img-user" src="img/user1.svg" alt="">Nando
                     <div class="distinciones">
                         <img class="img-user2" src="img/winner.png" alt="">
                         <img class="img-user2" src="img/winner.png" alt="">
@@ -106,7 +105,7 @@
                     </div>
                 </a>
                 <a href="#" class="list-group-item list-group-item-action list-group-item-warning"><strong
-                        class="puesto">7°</strong> <img class="img-user" src="img/user1.svg" alt="">Juancho
+                    class="puesto">7°</strong> <img class="img-user" src="img/user1.svg" alt="">Juancho
                     <div class="distinciones">
                         <img class="img-user2" src="img/winner.png" alt="">
                         <img class="img-user2" src="img/winner.png" alt="">
@@ -117,7 +116,7 @@
                     </div>
                 </a>
                 <a href="#" class="list-group-item list-group-item-action list-group-item-info"><strong
-                        class="puesto">8°</strong> <img class="img-user" src="img/user2.svg" alt="">Leila
+                    class="puesto">8°</strong> <img class="img-user" src="img/user2.svg" alt="">Leila
                     <div class="distinciones">
                         <img class="img-user2" src="img/winner.png" alt="">
                         <img class="img-user2" src="img/winner.png" alt="">
@@ -149,14 +148,14 @@
     </main>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -9,22 +9,22 @@ body {
 
 .logo{
   margin-top: 50px;
-    width: 72px; 
-    height: 72px;
+  width: 72px; 
+  height: 72px;
 }
 .text-center{
-    width: 40vw;
-    margin: 0 auto;
+  width: 40vw;
+  margin: 0 auto;
 }
 
 .subnombre{
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 
 }
 
 @media (max-width: 950px) {
-    .text-center {
-      width:70vw;
+  .text-center {
+    width:70vw;
   }
 }
 
@@ -37,12 +37,12 @@ footer{
   background-color:  #4c3673d4;
 }
 .navbar-brand{
-    font-family: 'Luckiest Guy';
-    font-size: 2rem;
-    color: #ff9800 !important;
+  font-family: 'Luckiest Guy';
+  font-size: 2rem;
+  color: #ff9800 !important;
 } 
 .bg-dark {
-    background-color: #4c3673d4!important;
+  background-color: #4c3673d4!important;
 }
 
 .float-left{

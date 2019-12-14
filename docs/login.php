@@ -65,15 +65,13 @@ if($_POST)
                 {
                     if(password_verify($_POST["password"], $usuario["pass"]))
                     {
-                        if(isset($_POST["recordarme"]))
-                        {
-                            setcookie("emailusuario",$usuario["email"], time() + 60 * 60);
-                        }
-                        else
+
+                        setcookie("emailusuario",$usuario["email"], time() + 60 * 60);
+                        if(!isset($_POST["recordarme"]))
                         {
                             $email = "";
                             $password = "";
-                            setcookie("emailusuario", "", -1);
+                         //   setcookie("emailusuario", "", -1);
                         }
                         $validador = 1;
                         session_start();

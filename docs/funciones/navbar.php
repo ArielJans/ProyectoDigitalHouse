@@ -13,7 +13,7 @@ if(isset($_COOKIE["emailusuario"])){ session_start();
 <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-            <a class="nav-link" href="juego.php"><?php echo $_SESSION["nombre"] . ", jugá ahora!"; ?></a>
+            <a class="nav-link" href="juego.php"><?php echo "Bienvenido, " . $_SESSION["nombre"] . "!"; ?></a>
         </li>
                 <li class="nav-item">
             <a class="nav-link" href="index.php">HOME</a>

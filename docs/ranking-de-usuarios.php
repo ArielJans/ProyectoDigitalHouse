@@ -43,7 +43,7 @@
 
             <!-- ///////////////// LISTA DE TANKING ///////////////-->
             <div class="list-group">
-                <a href="perfil.html" class="list-group-item list-group-item-action">
+                <a href="perfil.php" class="list-group-item list-group-item-action">
                     <strong class="puesto">2°</strong> <img class="img-user" src="img/user2.svg" alt=""> Eugenia
                     <div class="distinciones">
                         <img class="img-user2" src="img/copa.png" alt="">
@@ -57,7 +57,7 @@
                         <strong>200.265 Puntos</strong>
                     </div>
                 </a>
-                <a href="perfil.html" class="list-group-item list-group-item-action list-group-item-primary"><strong
+                <a href="perfil.php" class="list-group-item list-group-item-action list-group-item-primary"><strong
                     class="puesto">3°</strong> <img class="img-user" src="img/user1.svg" alt="">Rauel
                     <div class="distinciones">
                         <img class="img-user2" src="img/copa.png" alt="">
@@ -69,7 +69,7 @@
                         <strong>198.155 Puntos</strong>
                     </div>
                 </a>
-                <a href="perfil.html" class="list-group-item list-group-item-action list-group-item-secondary"><strong
+                <a href="perfil.php" class="list-group-item list-group-item-action list-group-item-secondary"><strong
                     class="puesto">4°</strong> <img class="img-user" src="img/user1.svg" alt="">Pepe
                     <div class="distinciones">
                         <img class="img-user2" src="img/copa.png" alt="">

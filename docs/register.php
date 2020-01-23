@@ -183,12 +183,15 @@ if($_POST)
 				<input type="password" id="rePassword" name="repassword" class="form-control " placeholder="Repetir Contraseña" value="<?php 
 				if(isset($errores["repassword"])){echo"";}else{echo $repassword;}?>">
 				<small class="text-center"><?= (isset($errores["repassword"])) ? $errores["repassword"] : "" ?></small>
-				<p class="btn text-center" id="imagenAvatar">Imagen de avatar:</p>
-				<div class="input-group-prepend">
+
+				<!--///////////////////////-->
+				<p class="avatar-t">Agregar avatar:</p>
+				
+				<div class="avatar-file">
+					<input type="file" class=""   name="avatar">
 				</div>
-				<div class="custom-file">
-					<input type="file" class="" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="avatar">
-				</div>
+				<!--///////////////////////-->
+
 				<p><input type="checkbox" class="chek" value="remember-me" name="recordarme" <?php if(isset($_POST["recordarme"])){echo "checked";}else{echo "";}?>> Recordarme</p>
 				<button class="btn btn-lg btn-primary btn-block" type="submit">Registrarme</button>
 				<p class="mt-5 mb-3 text-muted">Ya estas registrado? <a href="login.php">Ingresar</a></p>

@@ -11,7 +11,7 @@
 .row {
     margin-right: 0;
     margin-left: 0;
-    height: 89vh;
+    min-height: 95vh;
 } 
 
 /* custom left */

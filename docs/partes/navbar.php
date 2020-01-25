@@ -6,7 +6,7 @@
 </button>
 
 
-<?php 
+<?php
 if(isset($_COOKIE["emailusuario"])){ session_start();
 ?>
 
@@ -16,7 +16,7 @@ if(isset($_COOKIE["emailusuario"])){ session_start();
             <a class="nav-link" href="juego.php"><?php echo "Bienvenido, " . $_SESSION["nombre"] . "!"; ?></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index.php">HOME</a>
+            <a class="nav-link" href="logout.php">HOME</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="ranking-de-usuarios.php">RANKING</a>
@@ -36,7 +36,7 @@ if(isset($_COOKIE["emailusuario"])){ session_start();
 
     </ul>
 </div>
-<?php 
+<?php
 }else{ setcookie("emailusuario", "", -1); ?>
 <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">

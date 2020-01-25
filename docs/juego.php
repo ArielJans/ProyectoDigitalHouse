@@ -1,4 +1,17 @@
-<!DOCTYPE html>
+<?php
+include_once 'includes/functions.inc.php';
+
+session_start();
+
+loginByCookie();
+
+$logged = isset($_SESSION['login']);
+
+// echo "<pre>";
+// var_dump($_COOKIE);
+// echo "</pre>";
+ ?>
+ <!DOCTYPE html>
 <html lang="es">
 
 <head>

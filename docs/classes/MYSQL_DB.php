@@ -2,7 +2,7 @@
 include_once 'classes/DB.php';
 
 class MYSQL_DB implements DB {
-  private $dsn = "mysql:host=127.0.0.1;dbname=mydb;port=3306;charset=utf8";
+  private $dsn = "mysql:host=127.0.0.1;dbname=game;port=3306;charset=utf8";
   private $user = "root";
   private $pass = "";
   private $con;
@@ -38,7 +38,7 @@ class MYSQL_DB implements DB {
 
   public function addUser($data)
   {
-    $stmt = $this->con->prepare("INSERT INTO usuarios(email,password, user_pic, user_name)
+    $stmt = $this->con->prepare("INSERT INTO users(email,password, user_pic, user_name)
                                   VALUES (:email, :password, :user_pic, :user_name)");
     $stmt->bindValue(":email", $data['email'], PDO::PARAM_STR);
     $stmt->bindValue(":password", $data['password'], PDO::PARAM_STR);

@@ -1,97 +1,21 @@
 
 <?php
-$email = "";
-$password = "";
-$errores = [];
-$validador = 2;
+include_once 'core/init.php';
 
-if($_POST)
-{
-    if(isset($_POST["email"]))
-    {
-        if(empty($_POST["email"]))
-        {
-            $errores["email"] = "Ténes que ingresar un email! lo dejaste en blanco <br><br>";
-            $password = "";
-            $email = "";        }
-            if(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) && !empty($_POST["email"]))
-            {
-                $errores["email"] = "Lo que pones acá debe ser un email con formato valido, no olvides poner un arroba y poner un dominio";
-                $password = "";
-                $email = "";
-            }
-            else
-            {
-                $email = $_POST["email"];
-            }
-        }
+loginByCookie();
 
-        if(isset($_POST["password"]))
-        {
-            if(empty($_POST["password"]))
-            {
-                $errores["password"] = "Tenes que poner una contraseña! lo dejaste en blanco<br><br>";
-            }
-            else
-            {
-                if(!empty($email))
-                {
-                    $password = $_POST["password"];
-                }
-                else
-                {
-                    $password = "";
-                }
-            }
+  if (isset($_SESSION['login'])) {
+    header("Location: index.php");exit;
+  }
 
-        }
-        if (count($errores) === 0)
-        {
-            $datos = file_get_contents("usuarios.json");
-            $datos = explode(PHP_EOL, $datos);
-            array_pop($datos);
-            $usuariosfinales = [];
-            foreach($datos as $usuario1) //entra en cada posición, por cada usuario que tenga lo convierte en json y lo guarda en usuariofinal, y lo guarda en el última posicion de usuariosfinales
-            {
-                $usuariofinal = json_decode($usuario1, true);
-                $usuariosfinales[] = $usuariofinal;
-            }
-            $salida = 0;
-            foreach($usuariosfinales as $usuario)
-            {
-                $salida++;
-                //var_dump($usuario["email"]);
-                if($usuario["email"] == $_POST["email"])
-                {
-                    if(password_verify($_POST["password"], $usuario["pass"]))
-                    {
 
-                        setcookie("emailusuario",$usuario["email"], time() + 60 * 60);
-                        if(!isset($_POST["recordarme"]))
-                        {
-                            $email = "";
-                            $password = "";
-                         //   setcookie("emailusuario", "", -1);
-                        }
-                        $validador = 1;
-                        session_start();
-                        $_SESSION["nombre"] = $usuario["nombre"];
-                        $_SESSION["email"] = $usuario["email"];
-                        $salida = 0;
-                        header("Location: bienvenida.php");
-                        exit;
-                    }
-                }
-            }
-            if(count($usuariosfinales) == $salida)
-            {
-                $validador = 0;
-            }
-        }
+  if ($_POST) {
+    $OBJ_user = new User(0);
 
-    }
+    $errorMessage = $OBJ_user->login($_POST['email'], $_POST['password'], isset($_POST['remember']));
+  }
 
-    ?>
+ ?>
 
     <!DOCTYPE html>
     <html lang="es">
@@ -119,16 +43,28 @@ if($_POST)
                 <form class="form-signin" action="" method="POST" enctype="multipart/form-data">
                     <img class="mb-4 logo" src="img/medal.png" alt="">
                     <h1 class="h3 mb-3 font-weight-normal">Iniciar Sesion</h1>
-                    <small class=""><?php if($validador == 0){echo "Datos incorrectos";}else{echo "";} ?></small>
-                    <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email"
-                    autofocus value="<?php echo $email; //if(empty($_POST["email"])){echo"";}else{echo $_POST["email"];}?>">
-                    <small class=""><?= (isset($errores["email"])) ? $errores["email"] : "" ?></small>
-                    <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Contraseña" value="<?php
-                    echo $password;//if(isset($errores["password"])){echo"";}else{echo $password;}?>">
-                    <small class=""><?= (isset($errores["password"])) ? $errores["password"] : "" ?></small>
-                    <input type="checkbox" class="chek" value="remember-me" name="recordarme" <?php if(isset($_POST["recordarme"])){echo "checked";}else{echo "";}?>><h7>Recordarme</h7>
-                    <a href="recuperarContraseña.php" class="recupero-pass">Olvide mi contraseña</a>
-                    <button class="btn btn-lg btn-primary btn-block" id="botonIngresar" type="submit">Ingresar</button>
+                    <div class="form-row" id="lila">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Email</label>
+        <input type="email" name="email" class="form-control"
+         id="inputEmail4" placeholder="Email" value="<?php if($_POST){echo $_POST['email']; }?>">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Contraseña</label>
+        <input type="password" name="password" class="form-control" id="inputPassword4" placeholder="***********">
+      </div>
+      <div class="form-group col-md-6">
+        <input type="checkbox" name="remember" id="remember">
+        <label for="remember">Recordarme</label>
+      </div>
+      <div class="form-group col-md-6">
+        <?php if(isset($errorMessage) && $errorMessage != ""){echo $errorMessage;} ?>
+      </div>
+    </div>
+    <div class="form-action">
+      <button type="submit">Iniciar sesión</button>
+      <a href="reset-pwd-request.php">Olvidé mi contraseña</a>
+    </div>
                     <p class="mt-5 mb-3 text-muted">No estas registrado? <a href="register.php">Registrarme</a></p>
                 </form>
             </section>

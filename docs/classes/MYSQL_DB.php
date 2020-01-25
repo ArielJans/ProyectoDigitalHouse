@@ -2,7 +2,7 @@
 include_once 'classes/DB.php';
 
 class MYSQL_DB implements DB {
-  private $dsn = "mysql:host=127.0.0.1;dbname=mydb;port=3306;charset=utf8";
+  private $dsn = "mysql:host=127.0.0.1;dbname=iphone_db;port=3306;charset=utf8";
   private $user = "root";
   private $pass = "";
   private $con;

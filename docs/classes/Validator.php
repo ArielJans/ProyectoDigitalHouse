@@ -40,19 +40,7 @@ class Validator
     }
   }
 
-  public function validateAddress($value)
-  {
-    if (!$value) {
-      $this->errors['address'] = "Por favor, ingrese su dirección";
-    }
-  }
 
-  public function validateZip($value)
-  {
-    if (!$value) {
-      $this->errors['zip'] = "Por favor, ingrese su código postal";
-    }
-  }
 
   public function validateUserPic($value)
   {

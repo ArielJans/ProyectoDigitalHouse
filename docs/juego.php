@@ -55,19 +55,7 @@ $logged = isset($_SESSION['login']);
         <!-- ///////////////// IMAGENES RIGTH ///////////////-->
         <section class="rigth col-md-8">
           <div class="header__bajada">
-      <?php
-          if ($logged) {
-            echo '<h2>Bienvenido!</h2>
-
-                  <p>Iniciaste sesión como <span class="user-name">' . $_SESSION['user']['user_name'] . '</span></p>';
-
-          } else {
-            echo '<h2>Registrate</h2>
-                  <p>Y encontrá el Iphone que soñas</p>
-                  <a href="register.php" class="btn">Crear cuenta</a>';
-          }
-
-         ?>
+    
     </div>
             <img src="images/fondo.jpg" class="img-back" alt="Imagen de fondo QUESTION RACE">
             <img src="images/medal.png" class="img-ficha" alt="ficha de juego">

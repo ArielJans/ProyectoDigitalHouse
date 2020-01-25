@@ -15,7 +15,7 @@ $logged = isset($_SESSION['login']);
             <a class="nav-link" href="juego.php"></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="logout.php">HOME</a>
+            <a class="nav-link" href="index.php">HOME</a>
         </li>
         <?php if($logged){
           echo '<li class="dropdown__toggler"><img src="images/users/'. $_SESSION['user']['user_pic'] .'" class="thumbnail-user"/><a>' . $_SESSION['user']['user_name'] . '</a>
@@ -47,6 +47,6 @@ $logged = isset($_SESSION['login']);
 
     </ul>
  </div>
- 
+
 
  </nav>

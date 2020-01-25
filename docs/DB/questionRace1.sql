@@ -57,39 +57,40 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`usuarios`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`usuarios` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `nombre` VARCHAR(45) NOT NULL,
-  `apellido` VARCHAR(45) NOT NULL,
-  `puntaje` VARCHAR(45) NOT NULL,
-  `avatar` VARCHAR(45) NOT NULL,
-  `premios_id` INT NOT NULL,
-  `ranking_id` INT NOT NULL,
-  `tipo_id` INT NOT NULL,
-  `tipo_id1` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `mydb`.`users` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(60) NOT NULL,
+  `email` varchar(80) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `puntaje` VARCHAR(45)DEFAULT NULL ,
+  `user_pic` varchar(100) DEFAULT NULL,
+  `premios_id` INT DEFAULT NULL,
+  `ranking_id` INT DEFAULT NULL,
+  `tipo_id` INT DEFAULT NULL,
+  `tipo_id1` INT DEFAULT NULL,
   PRIMARY KEY (`id`, `premios_id`, `ranking_id`, `tipo_id`, `tipo_id1`),
-  CONSTRAINT `fk_usuarios_premios1`
+  CONSTRAINT `fk_users_premios1`
     FOREIGN KEY (`premios_id`)
     REFERENCES `mydb`.`premios` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_usuarios_ranking1`
+  CONSTRAINT `fk_users_ranking1`
     FOREIGN KEY (`ranking_id`)
     REFERENCES `mydb`.`ranking` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_usuarios_tipo1`
+  CONSTRAINT `fk_users_tipo1`
     FOREIGN KEY (`tipo_id1`)
     REFERENCES `mydb`.`tipo` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_usuarios_premios1_idx` ON `mydb`.`usuarios` (`premios_id` ASC);
+CREATE INDEX `fk_users_premios1_idx` ON `mydb`.`users` (`premios_id` ASC);
 
-CREATE INDEX `fk_usuarios_ranking1_idx` ON `mydb`.`usuarios` (`ranking_id` ASC);
+CREATE INDEX `fk_users_ranking1_idx` ON `mydb`.`users` (`ranking_id` ASC);
 
-CREATE INDEX `fk_usuarios_tipo1_idx` ON `mydb`.`usuarios` (`tipo_id1` ASC);
+CREATE INDEX `fk_users_tipo1_idx` ON `mydb`.`users` (`tipo_id1` ASC);
 
 
 -- -----------------------------------------------------

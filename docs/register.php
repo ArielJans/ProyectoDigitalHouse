@@ -30,7 +30,7 @@ $valid = new Validator();
 
 <?php
 
-  $bs = 1;
+
 
  ?>
 

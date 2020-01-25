@@ -2,7 +2,7 @@
 include_once 'classes/DB.php';
 
 class MYSQL_DB implements DB {
-  private $dsn = "mysql:host=127.0.0.1;dbname=iphone_db;port=3306;charset=utf8";
+  private $dsn = "mysql:host=127.0.0.1;dbname=mydb;port=3306;charset=utf8";
   private $user = "root";
   private $pass = "";
   private $con;
@@ -24,7 +24,7 @@ class MYSQL_DB implements DB {
 
   public function findUser($requestedUser)
   {
-    $stmt = $this->con->prepare("SELECT * FROM users WHERE email = :email");
+    $stmt = $this->con->prepare("SELECT * FROM user WHERE email = :email");
     $stmt->bindValue(":email", $requestedUser, PDO::PARAM_STR);
     $stmt->execute();
 
@@ -38,7 +38,7 @@ class MYSQL_DB implements DB {
 
   public function addUser($data)
   {
-    $stmt = $this->con->prepare("INSERT INTO users(email,password, user_pic, user_name)
+    $stmt = $this->con->prepare("INSERT INTO user(email,password, user_pic, user_name)
                                   VALUES (:email, :password, :user_pic, :user_name)");
     $stmt->bindValue(":email", $data['email'], PDO::PARAM_STR);
     $stmt->bindValue(":password", $data['password'], PDO::PARAM_STR);
@@ -53,7 +53,7 @@ class MYSQL_DB implements DB {
 
   public function updateUser_email($email, $id)
   {
-    $stmt = $this->con->prepare("UPDATE users SET email = :email WHERE id = :id");
+    $stmt = $this->con->prepare("UPDATE user SET email = :email WHERE id = :id");
     $stmt->bindValue(":email", $email, PDO::PARAM_STR);
     $stmt->bindValue(":id", $id, PDO::PARAM_STR);
     $stmt->execute();
@@ -61,7 +61,7 @@ class MYSQL_DB implements DB {
 
   public function updateUser_userName($userName, $id)
   {
-    $stmt = $this->con->prepare("UPDATE users SET user_name = :user_name WHERE id = :id");
+    $stmt = $this->con->prepare("UPDATE user SET user_name = :user_name WHERE id = :id");
     $stmt->bindValue(":user_name", $userName, PDO::PARAM_STR);
     $stmt->bindValue(":id", $id, PDO::PARAM_STR);
     $stmt->execute();
@@ -70,7 +70,7 @@ class MYSQL_DB implements DB {
 
   public function updateUser_userPic($userPic, $id)
   {
-    $stmt = $this->con->prepare("UPDATE users SET user_pic = :user_pic WHERE id = :id");
+    $stmt = $this->con->prepare("UPDATE user SET user_pic = :user_pic WHERE id = :id");
     $stmt->bindValue(":user_pic", $userPic, PDO::PARAM_STR);
     $stmt->bindValue(":id", $id, PDO::PARAM_STR);
     $stmt->execute();
@@ -78,7 +78,7 @@ class MYSQL_DB implements DB {
 
   public function updateUser_password($password, $id)
   {
-    $stmt = $this->con->prepare("UPDATE users SET password = :password WHERE id = :id");
+    $stmt = $this->con->prepare("UPDATE user SET password = :password WHERE id = :id");
     $stmt->bindValue(":password", $password, PDO::PARAM_STR);
     $stmt->bindValue(":id", $id, PDO::PARAM_STR);
     $stmt->execute();

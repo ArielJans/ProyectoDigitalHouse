@@ -14,7 +14,7 @@
 
     <!--//////////////////// INICIO HEADER/NAV ////////////////////////////-->
     <header>
-        <?php include("funciones/navbar.php");?>
+        <?php include("partes/navbar.php");?>
         <img class="img-header" src="./img/fondo-web.jpg" alt="">
     </header>
     <!--//////////////////// FIN HEADER/NAV ////////////////////////////-->

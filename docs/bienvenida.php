@@ -7,7 +7,7 @@
 
 </head>
 <header>
-	<?php include("funciones/navbar.php");?>
+	<?php include("partes/navbar.php");?>
 	<img class="img-header text-center" src="./img/bienvenido.png" alt="">
 	<meta http-equiv="refresh" content="3;URL=juego.php">
 </header>
@@ -16,7 +16,7 @@
 	<main>
 	</main>
 
-	<?php include("funciones/footer.php"); ?>
+	<?php include("partes/footer.php"); ?>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 	crossorigin="anonymous"></script>

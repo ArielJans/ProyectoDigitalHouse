@@ -12,7 +12,7 @@
 
 <body>
     <header>
-        <?php include("funciones/navbar.php");?>
+        <?php include("partes/navbar.php");?>
     </header>
     <main class="row">
         <section class="left col-md-4">

@@ -34,15 +34,15 @@ if($_POST)
             }
             else
             {
-                if(!empty($email)) 
+                if(!empty($email))
                 {
                     $password = $_POST["password"];
                 }
                 else
                 {
                     $password = "";
-                }            
-            } 
+                }
+            }
 
         }
         if (count($errores) === 0)
@@ -109,21 +109,21 @@ if($_POST)
 
         <!--//////////////////// INICIO HEADER/NAV ////////////////////////////-->
         <header>
-            <?php include("funciones/navbar.php");?>
+            <?php include("partes/navbar.php");?>
         </header>
         <!--//////////////////// FIN HEADER/NAV ////////////////////////////-->
 
         <main>
             <!--//////////////////// INICIO FORM ////////////////////////////-->
             <section class="text-center">
-                <form class="form-signin" action="login.php" method="POST" enctype="multipart/form-data">
+                <form class="form-signin" action="" method="POST" enctype="multipart/form-data">
                     <img class="mb-4 logo" src="img/medal.png" alt="">
                     <h1 class="h3 mb-3 font-weight-normal">Iniciar Sesion</h1>
                     <small class=""><?php if($validador == 0){echo "Datos incorrectos";}else{echo "";} ?></small>
                     <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email"
                     autofocus value="<?php echo $email; //if(empty($_POST["email"])){echo"";}else{echo $_POST["email"];}?>">
                     <small class=""><?= (isset($errores["email"])) ? $errores["email"] : "" ?></small>
-                    <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Contraseña" value="<?php 
+                    <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Contraseña" value="<?php
                     echo $password;//if(isset($errores["password"])){echo"";}else{echo $password;}?>">
                     <small class=""><?= (isset($errores["password"])) ? $errores["password"] : "" ?></small>
                     <input type="checkbox" class="chek" value="remember-me" name="recordarme" <?php if(isset($_POST["recordarme"])){echo "checked";}else{echo "";}?>><h7>Recordarme</h7>

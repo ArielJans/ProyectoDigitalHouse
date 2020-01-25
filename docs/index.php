@@ -20,6 +20,19 @@
     <!--//////////////////// FIN HEADER/NAV ////////////////////////////-->
 
     <main>
+      <?php
+          if ($logged) {
+            echo '<h2>Bienvenido!</h2>
+
+                  <p>Iniciaste sesión como <span class="user-name">' . $_SESSION['user']['user_name'] . '</span></p>';
+
+          } else {
+            echo '<h2>Registrate</h2>
+                  <p>Y juga el juego mas divertido!!!</p>
+                  <a href="register.php" class="btn">Crear cuenta</a>';
+          }
+
+         ?>
         <!--//////////////////// INICIO DESCRIPCION ////////////////////////////-->
         <div class="container my-5">
 

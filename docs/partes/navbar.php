@@ -22,6 +22,9 @@ $logged = isset($_SESSION['login']);
                   <div class="dropdown__box">
                     <a href="user.php" class="dropdown__link">Ver perfil</a>
                     <a href="logout.php" class="dropdown__link">Cerrar sesión</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="login.php">JUGAR</a>
+                    </li>
                   </div>
                 </li>';
         }else {
@@ -31,46 +34,19 @@ $logged = isset($_SESSION['login']);
         <li class="nav-item">
             <a class="nav-link" href="ranking-de-usuarios.php">RANKING</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="contacto.php">CONTACTO</a>
-        </li>
+
         <li class="nav-item">
             <a class="nav-link" href="preguntas-frecuentes.php">AYUDA</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="admin.php">ADMIN</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="despedida.php">CERRAR SESION</a>
-        </li>
-
-    </ul>
- </div>
- <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-            <a class="nav-link" href="login.php">JUGAR</a>
-        </li>
-                <li class="nav-item">
-            <a class="nav-link" href="index.php">HOME</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="ranking-de-usuarios.php">RANKING</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="contacto.php">CONTACTO</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="preguntas-frecuentes.php">AYUDA</a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link" href="admin.php">ADMIN</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="login.php">INGRESAR</a>
         </li>
 
     </ul>
  </div>
+ 
 
  </nav>

@@ -18,7 +18,7 @@ footer{
 }
 
 .logo{
-    width: 72px; 
+    width: 72px;
     height: 72px;
 }
 
@@ -56,7 +56,7 @@ input{
     font-family: 'Luckiest Guy';
     font-size: 2rem;
     color: #ff9800 !important;
-} 
+}
 
 .float-left{
     width: 9%;
@@ -108,4 +108,7 @@ margin-top: 1rem;
 
 .avatar-file{
     text-align: left;
+}
+.nav-item active {
+  list-style: none;
 }

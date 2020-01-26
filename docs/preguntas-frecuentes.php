@@ -12,7 +12,7 @@
 
 <body>
     <header>
-        <?php include("funciones/navbar.php");?>
+        <?php include("partes/navbar.php");?>
     </header>
 
     <main>
@@ -28,7 +28,7 @@
                     </button>
                 </h2>
             </div>
-            
+
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
@@ -62,7 +62,7 @@
     </div>
     <div class="card">
         <div class="card-header" id="headingfour">
-            <h2 class="mb-0"> 
+            <h2 class="mb-0">
                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsefour"
                 aria-expanded="false" aria-controls="collapsefour">
                 Esta es otra pregunta frecuente #3

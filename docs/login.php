@@ -75,7 +75,7 @@ loginByCookie();
         </main>
 
         <!--///////////////////// FOOTER /////////////////////////-->
-        <?php include("funciones/footer.php"); ?>
+        <?php include("partes/footer.php"); ?>
         <!--///////////////////// FIN FOOTER /////////////////////////-->
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

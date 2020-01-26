@@ -9,11 +9,11 @@
 </head>
 
 <header>
-  <?php include("funciones/navbar.php");?>
+  <?php include("partes/navbar.php");?>
 </header>
 
 <body>
-  
+
   <main>
 
    <section class="text-center subnombre">
@@ -29,7 +29,7 @@
   </section>
 </main>
 
-<?php include("funciones/footer.php"); ?>
+<?php include("partes/footer.php"); ?>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

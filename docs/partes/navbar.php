@@ -20,7 +20,7 @@ $logged = isset($_SESSION['login']);
         <?php if($logged){
           echo '<li class="nav-item"><img src="images/users/'. $_SESSION['user']['user_pic'] .'" class="thumbnail-user"/><a>' . $_SESSION['user']['user_name'] . '</a>
                   <div class="dropdown__box">
-                    <a href="user.php" class="dropdown__link">Ver perfil</a>
+                    <a href="perfil.php" class="dropdown__link">Ver perfil</a>
                     <a href="logout.php" class="dropdown__link">Cerrar sesión</a>
                     <li class="nav-item active">
                         <a class="nav-link" href="juego.php">JUGAR</a>

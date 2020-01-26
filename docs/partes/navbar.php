@@ -12,7 +12,7 @@ $logged = isset($_SESSION['login']);
  <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-            <a class="nav-link" href="juego.php"></a>
+            <a class="nav-link" href="index.php"></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="index.php">HOME</a>
@@ -35,15 +35,13 @@ $logged = isset($_SESSION['login']);
             <a class="nav-link" href="ranking-de-usuarios.php">RANKING</a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item active">
             <a class="nav-link" href="preguntas-frecuentes.php">AYUDA</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
             <a class="nav-link" href="contacto.php">CONTACTO</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="admin.php">ADMIN</a>
-        </li>
+
 
     </ul>
  </div>

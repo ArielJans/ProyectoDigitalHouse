@@ -18,12 +18,12 @@ $logged = isset($_SESSION['login']);
             <a class="nav-link" href="index.php">HOME</a>
         </li>
         <?php if($logged){
-          echo '<li class="dropdown__toggler"><img src="images/users/'. $_SESSION['user']['user_pic'] .'" class="thumbnail-user"/><a>' . $_SESSION['user']['user_name'] . '</a>
+          echo '<li class="nav-item"><img src="images/users/'. $_SESSION['user']['user_pic'] .'" class="thumbnail-user"/><a>' . $_SESSION['user']['user_name'] . '</a>
                   <div class="dropdown__box">
                     <a href="user.php" class="dropdown__link">Ver perfil</a>
                     <a href="logout.php" class="dropdown__link">Cerrar sesión</a>
                     <li class="nav-item active">
-                        <a class="nav-link" href="login.php">JUGAR</a>
+                        <a class="nav-link" href="juego.php">JUGAR</a>
                     </li>
                   </div>
                 </li>';
@@ -31,7 +31,7 @@ $logged = isset($_SESSION['login']);
           echo '<li><a href="./login.php">Entrar</a></li>
                 <li><a href="./register.php">Registrarse</a></li>';
         } ?>
-        <li class="nav-item">
+        <li class="nav-item active">
             <a class="nav-link" href="ranking-de-usuarios.php">RANKING</a>
         </li>
 

@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<?php
+include_once 'includes/functions.inc.php';
+
+session_start();
+
+loginByCookie();
+
+ ?>
+ <!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -12,7 +20,7 @@
 
 <body>
     <header>
-        <?php include("funciones/navbar.php");?>
+        <?php include("partes/navbar.php");?>
     </header>
     <main class="row">
         <section class="left col-md-4">

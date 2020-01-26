@@ -55,7 +55,7 @@ $logged = isset($_SESSION['login']);
         <!-- ///////////////// IMAGENES RIGTH ///////////////-->
         <section class="rigth col-md-8">
           <div class="header__bajada">
-    
+
     </div>
             <img src="images/fondo.jpg" class="img-back" alt="Imagen de fondo QUESTION RACE">
             <img src="images/medal.png" class="img-ficha" alt="ficha de juego">

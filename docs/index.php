@@ -1,5 +1,15 @@
 <?php
+include_once 'includes/functions.inc.php';
+
+session_start();
+
+loginByCookie();
+
 $logged = isset($_SESSION['login']);
+
+// echo "<pre>";
+// var_dump($_COOKIE);
+// echo "</pre>";
  ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -17,74 +27,14 @@ $logged = isset($_SESSION['login']);
 
     <!--//////////////////// INICIO HEADER/NAV ////////////////////////////-->
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-         <a class="navbar-brand" href="index.php">QUESTION RACE</a>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-         <span class="navbar-toggler-icon"></span>
-      </button>
-
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-         <ul class="navbar-nav ml-auto">
-             <li class="nav-item active">
-                 <a class="nav-link" href="juego.php"></a>
-             </li>
-             <li class="nav-item">
-                 <a class="nav-link" href="index.php">HOME</a>
-             </li>
-             <?php if($logged){
-               echo '<li class="dropdown__toggler"><img src="images/users/'. $_SESSION['user']['user_pic'] .'" class="thumbnail-user"/><a>' . $_SESSION['user']['user_name'] . '</a>
-                       <div class="dropdown__box">
-                         <a href="user.php" class="dropdown__link">Ver perfil</a>
-                         <a href="logout.php" class="dropdown__link">Cerrar sesión</a>
-                         <li class="nav-item active">
-                             <a class="nav-link" href="login.php">JUGAR</a>
-                         </li>
-                       </div>
-                     </li>';
-             }else {
-               echo '<li><a href="./login.php">Entrar</a></li>
-                     <li><a href="./register.php">Registrarse</a></li>';
-             } ?>
-             <li class="nav-item">
-                 <a class="nav-link" href="ranking-de-usuarios.php">RANKING</a>
-             </li>
-
-             <li class="nav-item">
-                 <a class="nav-link" href="preguntas-frecuentes.php">AYUDA</a>
-             </li>
-             <li class="nav-item">
-                 <a class="nav-link" href="contacto.php">CONTACTO</a>
-             </li>
-             <li class="nav-item">
-                 <a class="nav-link" href="admin.php">ADMIN</a>
-             </li>
-
-         </ul>
-      </div>
-
-
-      </nav>
+        <?php include("partes/navbar.php");?>
         <img class="img-header" src="./img/fondo-web.jpg" alt="">
 
     </header>
     <!--//////////////////// FIN HEADER/NAV ////////////////////////////-->
 
     <main>
-      <?php
-          if ($logged) {
-            echo '<h2>Bienvenido!</h2>
 
-                  <p>Iniciaste sesión como <span class="user-name">' . $_SESSION['user']['user_name'] . '</span></p>';
-
-          } else {
-            echo '<h2>Registrate</h2>
-                  <p>Y juga el juego mas divertido!!!</p>
-                  <a href="register.php" class="btn">Crear cuenta</a>';
-          }
-
-         ?>
         <!--//////////////////// INICIO DESCRIPCION ////////////////////////////-->
         <div class="container my-5">
 
@@ -138,7 +88,7 @@ $logged = isset($_SESSION['login']);
 
         <section class="call-to-action">
             <h2 class="tex-cta">Empeza a jugar ahora!!</h2>
-            <button type="button" class="btn btn-cta btn-primary btn-lg btn-warning"><a href="register.html">COMENZAR</a></button>
+            <button type="button" class="btn btn-cta btn-primary btn-lg btn-warning"><a href="login.php">COMENZAR</a></button>
         </section>
 
     </main>

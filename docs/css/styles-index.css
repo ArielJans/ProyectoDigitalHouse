@@ -37,7 +37,7 @@ footer{
     font-family: 'Luckiest Guy';
     font-size: 2rem;
     color: #ff9800 !important;
-} 
+}
 
 .float-left{
     width: 9%;
@@ -55,4 +55,8 @@ footer{
     margin-top: 5px;
     padding: 0.6rem 2rem;
     font-size: 1.1rem;
+}
+.main1{
+  background-color: violet;
+  
 }

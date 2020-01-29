@@ -55,17 +55,10 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`usuarios`
-CREATE TABLE `mydb`.`user` (
-  `id` int(11) NOT NULL,
-  `user_name` varchar(60) NOT NULL,
-  `email` varchar(80) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `user_pic` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`users` (
-    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `user_name` varchar(60) NOT NULL,
   `email` varchar(80) NOT NULL,
   `password` varchar(100) NOT NULL,
@@ -75,7 +68,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`users` (
   `ranking_id` INT DEFAULT NULL,
   `tipo_id` INT DEFAULT NULL,
   `tipo_id1` INT DEFAULT NULL,
-  PRIMARY KEY (`id`, `premios_id`, `ranking_id`, `tipo_id`, `tipo_id1`),
   CONSTRAINT `fk_users_premios1`
     FOREIGN KEY (`premios_id`)
     REFERENCES `mydb`.`premios` (`id`)

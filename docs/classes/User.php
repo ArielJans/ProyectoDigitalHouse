@@ -26,7 +26,7 @@ class User {
       $data['user_pic'] = "default-avatar.jpg";
     }
 
-    move_uploaded_file($_FILES['userPic']['tmp_name'],"images/users/". $picToken . $_POST['email'] . "." . pathinfo($_FILES['userPic']['name'], PATHINFO_EXTENSION));
+    move_uploaded_file($_FILES['userPic']['tmp_name'],"img/users/". $picToken . $_POST['email'] . "." . pathinfo($_FILES['userPic']['name'], PATHINFO_EXTENSION));
 
     $this->MYSQL_DB->addUser($data);
     $this->JSON_DB->addUser($data);

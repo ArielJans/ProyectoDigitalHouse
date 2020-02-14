@@ -54,17 +54,17 @@ $valid = new Validator();
  			<form class="form-signin" action="" method="POST" enctype="multipart/form-data">
  				<img class="mb-4 logo" src="img/medal.png" alt="">
  				<h1 class="h3 mb-3 font-weight-normal">Registrarse<?php// var_dump($_POST);?></h1>
- 				<div class="form-group col-md-6">
-         <label for="email">Email*</label> <?php if(isset($errors['email'])){echo '<span>'. $errors['email'] .'</span>';} ?>
+ 				<div class="form-group col-md-12">
+         <label for="email"></label> <?php if(isset($errors['email'])){echo '<span>'. $errors['email'] .'</span>';} ?>
          <input type="email" class="form-control" name="email" id="email" placeholder="Email" value="<?php if($_POST){echo $_POST['email']; }?>">
        </div>
- 			<div class="form-group col-md-6">
- 			<label for="password">Contraseña*</label> <?php if(isset($errors['password'])){echo '<span>'. $errors['password'] .'</span>';} ?>
- 			<input type="password" class="form-control" name="password" id="password" placeholder="***********">
+ 			<div class="form-group col-md-12">
+ 			<label for="password"></label> <?php if(isset($errors['password'])){echo '<span>'. $errors['password'] .'</span>';} ?>
+ 			<input type="password" class="form-control" name="password" id="password" placeholder="Contraseña">
  		</div>
 
  				<!--///////////////////////-->
- 				<div class="form-group col-md-2">
+ 				<div class="form-group col-md-12">
          <label for="userPic">Foto de perfil</label>
          <input type="file" name="userPic" id="userPic">
          <?php if(isset($errors['userPic'])){echo '<span class="zip-error">'. $errors['userPic'] .'</span>';} ?>

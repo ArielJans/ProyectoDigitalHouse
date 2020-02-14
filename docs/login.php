@@ -40,9 +40,6 @@ if ($_POST) {
   <main>
     <!--//////////////////// INICIO FORM ////////////////////////////-->
     <section class="text-center">
-      <li class="nav-item active">
-        <a class="nav-link" href="admin.php">Inicie sesion como administrador</a>
-      </li>
       <form class="form-signin" action="" method="POST" enctype="multipart/form-data">
         <img class="mb-4 logo" src="img/medal.png" alt="">
         <h1 class="h3 mb-3 font-weight-normal">Iniciar Sesion</h1>
